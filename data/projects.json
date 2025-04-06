@@ -1,0 +1,72 @@
+[
+    {
+      "thumbnail": "/weather_thumbnail.png",
+      "title": "Weather Dashboard",
+      "link": {
+        "label": "Weather.dash",
+        "url": "https://www.example.com"
+      },
+      "description": "Developed a weather dashboard that fetches real-time weather data from a public API and presents it with clean UI using HTML, CSS.",
+      "languageIcons": ["/css_icon.png", "/html_icon.png"]
+    },
+    {
+      "thumbnail": "/ecommerce_thumbnail.png",
+      "title": "E-commerce Platform",
+      "link": {
+        "label": "myecommerce.com",
+        "url": "https://www.example.com"
+      },
+      "description": "Built a complete e-commerce solution with shopping cart, user authentication, product filters, and admin dashboard.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },
+    {
+      "thumbnail": "/portfolio_thumbnail.png",
+      "title": "Personal Portfolio",
+      "link": {
+        "label": "sonu.dev",
+        "url": "https://www.example.com"
+      },
+      "description": "Crafted a sleek and responsive portfolio to showcase my projects and technical skills using HTML5, CSS3, and JavaScript.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },
+    {
+      "thumbnail": "/taskmanager_thumbnail.png",
+      "title": "Task Manager App",
+      "link": {
+        "label": "TaskIt",
+        "url": "https://www.example.com"
+      },
+      "description": "Developed a productivity app for managing daily tasks with user authentication, due dates, and priority sorting.",
+      "languageIcons": ["/react_icon.png", "/node_icon.png", "/mongo_icon.png"]
+    },
+    {
+      "thumbnail": "/chatapp_thumbnail.png",
+      "title": "Real-time Chat App",
+      "link": {
+        "label": "ChatZone",
+        "url": "https://www.example.com"
+      },
+      "description": "Created a real-time chat application using Socket.IO with support for private rooms and message history.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },
+    {
+      "thumbnail": "/mentor_mind.png",
+      "title": "AI Mentor Assistant",
+      "link": {
+        "label": "Mentor Mind",
+        "url": "https://www.example.com"
+      },
+      "description": "Built an AI-based mentorship web app to recommend personalized roadmaps for students using Gemini API and Next.js.",
+      "languageIcons": [
+        "/react_icon.png",
+        "/tailwind_icon.png",
+        "/ts_icon.png",
+        "/mongo_icon.png",
+        "/node_icon.png",
+        "/shadcn_icon.png",
+        "/next_icon.png"
+      ]
+    }
+    
+  ]
+  

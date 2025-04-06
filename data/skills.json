@@ -1,0 +1,51 @@
+[
+    
+    {
+        "name" : "HTML",
+        "icon" : "/html_icon.png"
+    },
+    {
+        "name" : "CSS",
+        "icon" : "/css_icon.png"
+    },
+    {
+        "name" : "Javascript",
+        "icon" : "/js_icon.png"
+    },
+    {
+        "name" : "React JS",
+        "icon" : "/react_icon.png"
+    },
+    {
+        "name" : "Node JS",
+        "icon" : "/node_icon.png"
+    },
+    {
+        "name" : "Express JS",
+        "icon" : "/express_icon.png"
+    },
+    {
+        "name" : "Mongo DB",
+        "icon" : "/mongo_icon.png"
+    },
+    {
+        "name" : "Next JS",
+        "icon" : "/next_icon.png"
+    },
+    {
+        "name" : "Typescript",
+        "icon" : "/ts_icon.png"
+    },
+    {
+        "name" : "Java",
+        "icon" : "/java_icon.png"
+    },
+    {
+        "name" : "Flutter",
+        "icon" : "/flutter_icon.png"
+    },
+    {
+        "name" : "Dart",
+        "icon" : "/dart_icon.png"
+    }
+]
