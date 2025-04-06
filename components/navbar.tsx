@@ -54,8 +54,8 @@ const Navbar = () => {
               onClick={() => scrollToSection(item.href)}
               className={`sm:px-3 sm:py-1.5 px-1 py-1 rounded-sm sm:rounded-md text-sm font-medium transition-all duration-200 ${
                 isActive
-                  ? "bg-violet-500 text-white"
-                  : "text-violet-400 hover:text-white hover:bg-violet-500"
+                  ? "bg-primary text-white"
+                  : "text-[#7e65fb] hover:text-white hover:bg-primary"
               }`}
             >
               {item.name}

@@ -1,10 +1,11 @@
 import { Clock, Mail, Phone } from 'lucide-react'
 import React from 'react'
+import Location from '../location/location'
 
 const Info = () => {
   return (
-    <section className="flex flex-col gap-10 w-full lg:w-1/2">
-    <div className="flex flex-col gap-4">
+    <section className="flex flex-col gap-10 w-full lg:w-1/2 mt-48">
+    {/* <div className="flex flex-col gap-4">
       <h1 className="text-4xl font-bold text-[#2E1065] w-10 leading-[3rem]">
         Contact Information
       </h1>
@@ -12,12 +13,12 @@ const Info = () => {
         Have questions or feedback? We're here to help and ensure you
         have a smooth and enjoyable experience.
       </span>
-    </div>
+    </div> */}
 
-    <div className="bg-gray-500 p-3 w-full flex gap-3 md:gap-10 rounded-lg working">
+    <div className="bg-gray-500/70 backdrop-blur-lg border-1 border-gray-400 shadow-xl p-3 w-full flex gap-3 md:gap-10 rounded-lg working">
       {/* 1 */}
       <div className="flex items-center gap-4 w-1/2 boxes">
-        <div className="bg-violet-700 p-2 rounded-full">
+        <div className="bg-indigo-700 p-2 rounded-full">
           <Clock size={24} />
         </div>
         <div className="leading-1">
@@ -30,7 +31,7 @@ const Info = () => {
 
       {/* 2 */}
       <div className="flex items-center gap-4 w-1/2 boxes">
-        <div className="bg-violet-700 p-2 rounded-full">
+        <div className="bg-indigo-700 p-2 rounded-full">
           <Mail size={24} />
         </div>
         <div className="leading-1">
@@ -40,12 +41,13 @@ const Info = () => {
       </div>
     </div>
 
-    <div className="flex items-center gap-1 bg-indigo-400 w-fit p-1 rounded-full">
-      <div className="bg-violet-700 p-2 rounded-full">
+    <div className="flex items-center gap-1 bg-indigo  backdrop-blur-lg border-1 border-blue-900 shadow-xl w-fit p-1 rounded-full">
+      <div className="bg-indigo-700 p-2 rounded-full">
         <Phone size={24} />
       </div>
-      <div className="px-2">+91 9905757864</div>
+      <div className="px-2 text-indigo-600">+91 9905757864</div>
     </div>
+    <Location />
   </section>
   )
 }

@@ -2,16 +2,19 @@ import { Input } from "@/components/ui/input";
 
 export default function MailForm() {
   return (
-    <div className="text-[#2E1065] bg-white w-full max-w-[500px] p-6 rounded-2xl">
+    <div className="text-[#2E1065] backdrop-blur-lg bg-white/50 w-full max-w-[500px] h-[610px] px-6 py-8 rounded-2xl border-1 border-gray-200 shadow-xl">
       {/* Heading */}
-      <h2 className="text-4xl font-bold">Ask A Question</h2>
+      <div className="py-2">
+        <h2 className="text-4xl font-bold">Ask A Question</h2>
       <p className="text-gray-500 mt-2">
         If you have any questions, you can contact me. <br />
         Please, fill out the form below.
       </p>
+      </div>
+      
 
       {/* Form Fields */}
-      <form className="mt-8 space-y-6">
+      <form className="mt-8 space-y-6 py-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block mb-2 text-sm font-medium">First Name</label>
@@ -44,15 +47,18 @@ export default function MailForm() {
         </div>
 
         {/* Submit Button */}
+
+        <div className="py-2">
         <button
           type="submit"
-          className="flex items-center gap-2 bg-[#6b2edc] text-white px-3 py-3 rounded-xl hover:bg-[#4d1ca7] hover:cursor-pointer transition-all shadow-lg"
+          className="flex items-center gap-2 bg-primary/100 text-white px-3 py-3 rounded-xl hover:bg-indigo-800 hover:cursor-pointer transition-all shadow-lg"
         >
           Submit Now
           <span className="bg-white px-4 py-2 rounded-xl text-[#2E1065]">
             →
           </span>
         </button>
+        </div>
       </form>
     </div>
   );
