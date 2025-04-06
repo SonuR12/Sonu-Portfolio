@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 
 export default function MailForm() {
   return (
-    <div className="text-[#2E1065] backdrop-blur-lg bg-white/50 w-full max-w-[500px] h-[610px] px-6 py-8 rounded-2xl border-1 border-gray-200 shadow-xl">
+    <div className="text-[#2E1065] mailform backdrop-blur-lg bg-white/50 w-full max-w-[500px] h-full max-h-[800px] px-6 py-8 rounded-2xl border-1 border-gray-200 shadow-xl">
       {/* Heading */}
       <div className="py-2">
         <h2 className="text-4xl font-bold">Ask A Question</h2>
