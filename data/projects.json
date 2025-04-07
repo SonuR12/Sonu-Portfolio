@@ -4,7 +4,7 @@
       "title": "Personal Portfolio",
       "link": {
         "label": "sonu.dev",
-        "url": "https://www.example.com"
+        "url": "https://sonu-portfolio-puce.vercel.app/"
       },
       "description": "Crafted a sleek and responsive portfolio to showcase my projects and technical skills using HTML5, CSS3, and JavaScript.",
       "languageIcons": ["/react_icon.png",
