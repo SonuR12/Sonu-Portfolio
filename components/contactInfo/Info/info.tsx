@@ -1,57 +1,9 @@
-import { Clock, Github, Linkedin, Mail, Phone, Send } from "lucide-react";
-import React, { useState } from "react";
+import { Clock, Send } from "lucide-react";
 import Location from "../location/location";
 import Link from "next/link";
+import Contactlink from "./contact-link";
 
 const Info = () => {
-  const [showText, setShowText] = useState({
-    phone: true,
-    mail: false,
-    linkedin: false,
-  });
-
-  const toggleText = (key: string) => {
-    setShowText((prev) => {
-      if (prev[key as keyof typeof prev]) {
-        return prev;
-      }
-  
-      return {
-        phone: false,
-        mail: false,
-        linkedin: false,
-        [key]: true,
-      };
-    });
-  };
-  
-
-  const contactItems = [
-    {
-      key: "phone",
-      icon: <Phone size={24} />,
-      text: "+91 9905757864",
-      url:"tel:+91 9905757864"
-    },
-    {
-      key: "mail",
-      icon: <Mail size={24} />,
-      text: "sonurai272004@gmail.com",
-      url:"mailto:sonurai272004@gmail.com"
-    },
-    {
-      key: "linkedin",
-      icon: <Linkedin size={24} />,
-      text: "SonuRai",
-      url:"https://www.linkedin.com/in/sonu-rai-r12"
-    },
-    {
-      key: "GitHub",
-      icon: <Github size={24} />,
-      text: "SonuR12",
-      url:"https://github.com/SonuR12"
-    },
-  ];
 
   return (
     <section className="flex flex-col gap-10 w-full lg:w-1/2 mt-48">
@@ -79,27 +31,7 @@ const Info = () => {
       </div>
 
       {/* Contact Buttons */}
-      <div className="flex flex-wrap gap-3">
-        {contactItems.map(({ key, icon, text, url }) => {
-          const isVisible = showText[key as keyof typeof showText];
-          return (
-            <div
-              key={key}
-              onClick={() => toggleText(key)}
-              className={`flex items-center bg-indigo backdrop-blur-lg border border-blue-900 shadow-xl w-fit p-1 rounded-full transition-all duration-300 ${
-                isVisible ? "px-2" : "p-2"
-              }`}
-            >
-              <div className="bg-indigo-700 p-2 rounded-full cursor">{icon}</div>
-              {isVisible && (
-                <Link href={url} className="ml-2 text-indigo-600 hover:underline text-sm transform transition-transform duration-300 translate-x-0 opacity-100">
-                  {text}
-                </Link>
-              )}
-            </div>
-          );
-        })}
-      </div>
+     <Contactlink />
 
       <Location />
     </section>
