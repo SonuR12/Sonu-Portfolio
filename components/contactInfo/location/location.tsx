@@ -30,7 +30,7 @@ const Location = () => {
               <p className="text-gray-600 lg:line-clamp-2">{loc.address}</p>
               <p className="text-gray-800 mt-2">{loc.phone}</p>
               <div className="border-t border-violet-200 my-4" />
-              <Link href="/" className="text-primary font-medium flex items-center gap-1 hover:underline">
+              <Link target="_blank" href="https://www.google.com/maps?q=28.5075221,77.3209233&z=17&hl=en" className="text-primary font-medium flex items-center gap-1 hover:underline">
                 Get Directions <ArrowUpRight size={16} />
               </Link>
             </div>
