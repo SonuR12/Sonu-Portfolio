@@ -1,25 +1,5 @@
 [
     {
-      "thumbnail": "/weather_thumbnail.png",
-      "title": "Weather Dashboard",
-      "link": {
-        "label": "Weather.dash",
-        "url": "https://www.example.com"
-      },
-      "description": "Developed a weather dashboard that fetches real-time weather data from a public API and presents it with clean UI using HTML, CSS.",
-      "languageIcons": ["/css_icon.png", "/html_icon.png"]
-    },
-    {
-      "thumbnail": "/ecommerce_thumbnail.png",
-      "title": "E-commerce Platform",
-      "link": {
-        "label": "myecommerce.com",
-        "url": "https://www.example.com"
-      },
-      "description": "Built a complete e-commerce solution with shopping cart, user authentication, product filters, and admin dashboard.",
-      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
-    },
-    {
       "thumbnail": "/portfolio_thumbnail.png",
       "title": "Personal Portfolio",
       "link": {
@@ -27,27 +7,11 @@
         "url": "https://www.example.com"
       },
       "description": "Crafted a sleek and responsive portfolio to showcase my projects and technical skills using HTML5, CSS3, and JavaScript.",
-      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
-    },
-    {
-      "thumbnail": "/taskmanager_thumbnail.png",
-      "title": "Task Manager App",
-      "link": {
-        "label": "TaskIt",
-        "url": "https://www.example.com"
-      },
-      "description": "Developed a productivity app for managing daily tasks with user authentication, due dates, and priority sorting.",
-      "languageIcons": ["/react_icon.png", "/node_icon.png", "/mongo_icon.png"]
-    },
-    {
-      "thumbnail": "/chatapp_thumbnail.png",
-      "title": "Real-time Chat App",
-      "link": {
-        "label": "ChatZone",
-        "url": "https://www.example.com"
-      },
-      "description": "Created a real-time chat application using Socket.IO with support for private rooms and message history.",
-      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+      "languageIcons": ["/react_icon.png",
+      "/tailwind_icon.png",
+      "/ts_icon.png",
+      "/shadcn_icon.png",
+      "/next_icon.png"]
     },
     {
       "thumbnail": "/mentor_mind.png",
@@ -56,7 +20,7 @@
         "label": "Mentor Mind",
         "url": "https://www.example.com"
       },
-      "description": "Built an AI-based mentorship web app to recommend personalized roadmaps for students using Gemini API and Next.js.",
+      "description": "Built an AI-based mentorship web app to recommend personalized roadmaps for students using Gemini API and Next.js. (Team Project)",
       "languageIcons": [
         "/react_icon.png",
         "/tailwind_icon.png",
@@ -66,7 +30,53 @@
         "/shadcn_icon.png",
         "/next_icon.png"
       ]
-    }
+    },
+    {
+      "thumbnail": "/ecommerce_thumbnail.png",
+      "title": "E-commerce Platform",
+      "link": {
+        "label": "Maharaniz.com",
+        "url": "https://www.example.com"
+      },
+      "description": "Built a complete e-commerce solution with shopping cart, user authentication, product filters, and admin dashboard.",
+      "languageIcons": ["/react_icon.png",
+        "/tailwind_icon.png",
+        "/ts_icon.png",
+        "/mongo_icon.png",
+        "/node_icon.png",
+        "/shadcn_icon.png",
+        "/next_icon.png"]
+    },
+    {
+      "thumbnail": "/apple_thumbnail.png",
+      "title": "Apple Clone",
+      "link": {
+        "label": "Apple Frontend",
+        "url": "https://creative-marshmallow-d7d8bb.netlify.app"
+      },
+      "description": "A pixel-perfect clone of Apple's homepage built with HTML, Tailwind CSS, and JavaScript. Fully responsive with smooth transitions, animated scrolling, and interactive UI elements to replicate Apple's sleek design and user experience.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },    
+    {
+      "thumbnail": "/antivirus_thumbnail.png",
+      "title": "Antivirus Website",
+      "link": {
+        "label": "Antivirus.dash",
+        "url": "https://newantivirus.netlify.app/"
+      },
+      "description": "Designed and developed a modern, responsive antivirus product website as a freelance project using HTML, CSS, and JavaScript. The site includes smooth navigation, interactive UI components, feature highlights, and product download sections tailored for user engagement.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },    
+    {
+      "thumbnail": "/blinkit_thumbnail.png",
+      "title": "Blinkit App",
+      "link": {
+        "label": "Blinkit Web App",
+        "url": "https://blinkit-33f60.web.app"
+      },
+      "description": "Built a responsive Blinkit-inspired web app frontend using Flutter and Dart. The UI mimics real-world e-commerce interactions with smooth animations, custom widgets, and dynamic layout rendering. Hosted seamlessly on Firebase for fast, reliable access.",
+      "languageIcons": ["/flutter_icon.png", "/dart_icon.png", "/firebase_icon.png"]
+    }    
     
   ]
   

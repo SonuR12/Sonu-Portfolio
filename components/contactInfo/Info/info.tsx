@@ -1,6 +1,7 @@
 import { Clock, Github, Linkedin, Mail, Phone, Send } from "lucide-react";
 import React, { useState } from "react";
 import Location from "../location/location";
+import Link from "next/link";
 
 const Info = () => {
   const [showText, setShowText] = useState({
@@ -30,21 +31,25 @@ const Info = () => {
       key: "phone",
       icon: <Phone size={24} />,
       text: "+91 9905757864",
+      url:"tel:+91 9905757864"
     },
     {
       key: "mail",
       icon: <Mail size={24} />,
       text: "sonurai272004@gmail.com",
+      url:"mailto:sonurai272004@gmail.com"
     },
     {
       key: "linkedin",
       icon: <Linkedin size={24} />,
       text: "SonuRai",
+      url:"https://www.linkedin.com/in/sonu-rai-r12"
     },
     {
       key: "GitHub",
       icon: <Github size={24} />,
       text: "SonuR12",
+      url:"https://github.com/SonuR12"
     },
   ];
 
@@ -75,23 +80,21 @@ const Info = () => {
 
       {/* Contact Buttons */}
       <div className="flex flex-wrap gap-3">
-        {contactItems.map(({ key, icon, text }) => {
+        {contactItems.map(({ key, icon, text, url }) => {
           const isVisible = showText[key as keyof typeof showText];
           return (
             <div
               key={key}
               onClick={() => toggleText(key)}
-              className={`cursor-pointer flex items-center bg-indigo backdrop-blur-lg border border-blue-900 shadow-xl w-fit p-1 rounded-full transition-all duration-300 ${
+              className={`flex items-center bg-indigo backdrop-blur-lg border border-blue-900 shadow-xl w-fit p-1 rounded-full transition-all duration-300 ${
                 isVisible ? "px-2" : "p-2"
               }`}
             >
-              <div className="bg-indigo-700 p-2 rounded-full">{icon}</div>
+              <div className="bg-indigo-700 p-2 rounded-full cursor">{icon}</div>
               {isVisible && (
-                <div
-                  className="ml-2 text-indigo-600 text-sm transform transition-transform duration-300 translate-x-0 opacity-100"
-                >
+                <Link href={url} className="ml-2 text-indigo-600 hover:underline text-sm transform transition-transform duration-300 translate-x-0 opacity-100">
                   {text}
-                </div>
+                </Link>
               )}
             </div>
           );

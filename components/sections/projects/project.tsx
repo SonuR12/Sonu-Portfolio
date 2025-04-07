@@ -36,12 +36,12 @@ export const Project = ({ thumbnail, title, link, description, languageIcons }: 
       </div>
 
       {/* Description */}
-      <p className="line-clamp-3 text-sm text-neutral-600 dark:text-neutral-300">
+      <p className="line-clamp-2 text-sm text-neutral-600 dark:text-neutral-300">
         {description}
       </p>
 
       {/* Language Icons */}
-      <div className="flex gap-3 mt-auto">
+      <div className="flex items-center gap-3 mt-auto">
         {languageIcons.map((icon, index) => (
           <div
             key={index}
