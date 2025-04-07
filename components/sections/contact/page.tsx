@@ -7,9 +7,9 @@ import ContactInfo from "@/components/contactInfo/page";
 
 export const Contact = () => {
   return (
-    <div className="mx-10 md:mx-16 flex items-center flex-col gap-20" id="contact">
+    <div className="mx-4 sm:mx-10 md:mx-16 flex items-center flex-col gap-20" id="contact">
       <SectionHeader
-        className="!px-10 !text-center"
+        className="!px-10 !text-center mx-10 md:mx-16"
         plainText="📬 Get in touch with"
         highlightText="Contact Information"
       />
