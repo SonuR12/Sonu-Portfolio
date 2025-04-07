@@ -3,7 +3,7 @@
       "thumbnail": "/portfolio_thumbnail.png",
       "title": "Personal Portfolio",
       "link": {
-        "label": "sonu.dev",
+        "label": "Sonu.Dev",
         "url": "https://sonu-portfolio-puce.vercel.app/"
       },
       "description": "Crafted a sleek and responsive portfolio to showcase my projects and technical skills using HTML5, CSS3, and JavaScript.",
@@ -18,7 +18,7 @@
       "title": "AI Mentor Assistant",
       "link": {
         "label": "Mentor Mind",
-        "url": "https://www.example.com"
+        "url": "https://mentor-mind-app.vercel.app"
       },
       "description": "Built an AI-based mentorship web app to recommend personalized roadmaps for students using Gemini API and Next.js. (Team Project)",
       "languageIcons": [
@@ -36,7 +36,7 @@
       "title": "E-commerce Platform",
       "link": {
         "label": "Maharaniz.com",
-        "url": "https://www.example.com"
+        "url": "https://maharani-blush.vercel.app"
       },
       "description": "Built a complete e-commerce solution with shopping cart, user authentication, product filters, and admin dashboard.",
       "languageIcons": ["/react_icon.png",
@@ -49,32 +49,52 @@
     },
     {
       "thumbnail": "/apple_thumbnail.png",
-      "title": "Apple Clone",
+      "title": "Apple Website Clone",
       "link": {
         "label": "Apple Frontend",
         "url": "https://creative-marshmallow-d7d8bb.netlify.app"
       },
       "description": "A pixel-perfect clone of Apple's homepage built with HTML, Tailwind CSS, and JavaScript. Fully responsive with smooth transitions, animated scrolling, and interactive UI elements to replicate Apple's sleek design and user experience.",
       "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
-    },    
+    },
     {
       "thumbnail": "/antivirus_thumbnail.png",
       "title": "Antivirus Website",
       "link": {
-        "label": "Antivirus.dash",
-        "url": "https://newantivirus.netlify.app/"
+        "label": "Coming soon...",
+        "url": "/"
       },
       "description": "Designed and developed a modern, responsive antivirus product website as a freelance project using HTML, CSS, and JavaScript. The site includes smooth navigation, interactive UI components, feature highlights, and product download sections tailored for user engagement.",
       "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
-    },    
+    },      
+    {
+      "thumbnail": "/spotify_thumbnail.png",
+      "title": "Spotify Website Clone",
+      "link": {
+        "label": "Coming soon...",
+        "url": "/"
+      },
+      "description": "Built a responsive Spotify website clone using HTML, CSS, and JavaScript. The project replicates the core layout and design of Spotify's official web player, including a dynamic sidebar, music player UI, and interactive navigation. Focused on pixel-perfect styling and smooth user experience across devices.",
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+    },       
     {
       "thumbnail": "/blinkit_thumbnail.png",
-      "title": "Blinkit App",
+      "title": "Blinkit App UI Clone",
       "link": {
         "label": "Blinkit Web App",
         "url": "https://blinkit-33f60.web.app"
       },
       "description": "Built a responsive Blinkit-inspired web app frontend using Flutter and Dart. The UI mimics real-world e-commerce interactions with smooth animations, custom widgets, and dynamic layout rendering. Hosted seamlessly on Firebase for fast, reliable access.",
+      "languageIcons": ["/flutter_icon.png", "/dart_icon.png", "/firebase_icon.png"]
+    },
+    {
+      "thumbnail": "/todo_thumbnail.png",
+      "title": "Todo App",
+      "link": {
+        "label": "Todo Web App",
+        "url": "https://todoapp-2c9b5.web.app"
+      },
+      "description": "Developed a fully functional Todo web app using Flutter and Dart, deployed on Firebase. Features include adding new tasks, marking them as complete, deleting tasks, and real-time search functionality. Designed with a clean, responsive UI for seamless task management across devices.",
       "languageIcons": ["/flutter_icon.png", "/dart_icon.png", "/firebase_icon.png"]
     }    
     
