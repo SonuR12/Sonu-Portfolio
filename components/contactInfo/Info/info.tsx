@@ -5,7 +5,7 @@ import Contactlink from "./contact-link";
 const Info = () => {
 
   return (
-    <section className="flex flex-col gap-10 w-full lg:w-1/2 mt-48">
+    <section className="flex flex-col gap-10 w-full lg:w-1/2 mt-28 sm:mt-48">
       {/* Top Info Boxes */}
       <div className="bg-gray-500/70 backdrop-blur-lg border border-gray-400 shadow-xl p-3 w-full flex flex-col sm:flex-row gap-3 md:gap-10 rounded-lg">
         <div className="flex items-center gap-4 w-full sm:w-1/2">

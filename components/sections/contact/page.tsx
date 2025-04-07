@@ -28,7 +28,7 @@ export const Contact = () => {
             </div>
 
             {/* Foreground Content */}
-            <div className="w-full px-[33px] py-[27px] flex flex-col gap-10 rounded-xl relative z-20">
+            <div className="w-full p-4 sm:p-8 flex flex-col gap-10 rounded-xl relative z-20">
               <ContactInfo />
             </div>
           </div>

@@ -56,26 +56,29 @@ const Contactlink = () => {
 
   return (
     <div className="flex flex-wrap gap-3">
-        {contactItems.map(({ key, icon, text, url }) => {
-          const isVisible = showText[key as keyof typeof showText];
-          return (
-            <div
-              key={key}
-              onClick={() => toggleText(key)}
-              className={`flex items-center bg-indigo backdrop-blur-lg border border-blue-900 shadow-xl w-fit p-1 rounded-full transition-all duration-300 ${
-                isVisible ? "px-2" : "p-2 cursor-pointer"
-              }`}
+    {contactItems.map(({ key, icon, text, url }) => {
+      const isVisible = showText[key as keyof typeof showText];
+      return (
+        <div
+          key={key}
+          onClick={() => toggleText(key)}
+          className={`flex items-center bg-indigo backdrop-blur-lg border border-blue-900 shadow-xl w-fit p-1 rounded-full transition-all duration-300 ${
+            isVisible ? "px-2" : "p-2 cursor-pointer"
+          }`}
+        >
+          <div className="bg-indigo-700 p-2 rounded-full">{icon}</div>
+          {isVisible && (
+            <Link
+              href={url}
+              className="ml-2 text-indigo-600 hover:underline text-sm transform transition-transform duration-300 translate-x-0 opacity-100"
             >
-              <div className="bg-indigo-700 p-2 rounded-full">{icon}</div>
-              {isVisible && (
-                <Link href={url} className="ml-2 text-indigo-600 hover:underline text-sm transform transition-transform duration-300 translate-x-0 opacity-100">
-                  {text}
-                </Link>
-              )}
-            </div>
-          );
-        })}
-      </div>
+              {text}
+            </Link>
+          )}
+        </div>
+      );
+    })}
+  </div>  
   )
 }
 
