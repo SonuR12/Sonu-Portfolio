@@ -3,12 +3,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Section from "@/components/sections/page";
-import { HeroSection } from "@/components/sections/heroSection/page";
-import Hero from "@/components/sections/heroSection/hero";
 
-function hii() {
-  console.log("hello");
-}
 
 export default function Home() {
   return (

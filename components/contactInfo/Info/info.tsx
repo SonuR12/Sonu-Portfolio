@@ -1,6 +1,5 @@
 import { Clock, Send } from "lucide-react";
 import Location from "../location/location";
-import Link from "next/link";
 import Contactlink from "./contact-link";
 
 const Info = () => {
