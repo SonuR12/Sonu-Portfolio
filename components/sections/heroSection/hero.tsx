@@ -32,6 +32,7 @@ const Hero = () => {
           height={430}
           width={372}
           className="hidden md:block w-[372px] h-[430px] absolute right-0 -z-10"
+          priority
         />
         <Image
           src="/profile_dark_purple.png"
@@ -39,6 +40,7 @@ const Hero = () => {
           height={430}
           width={372}
           className="hidden md:block w-[372px] h-[430px] absolute right-0 -z-10"
+          priority
         />
         <Image
           src="/profile_picture.png"
@@ -46,6 +48,7 @@ const Hero = () => {
           height={417}
           width={357}
           className="hidden md:block min-w-[360px] h-[412px] z-10 mr-[6px] my-[8px] rounded-xl"
+          priority
         />
       </div>
     </section>

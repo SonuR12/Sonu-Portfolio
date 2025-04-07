@@ -45,7 +45,8 @@ const Location = () => {
                 width={100}
                 src={loc.map}
                 alt={`${loc.country} map`}
-                className="relative z-10 rounded-full border-2 border-gray-200"
+                className="relative z-10 rounded-full border-2 border-gray-200 py-2"
+                priority
               />
             </div>
           </div>

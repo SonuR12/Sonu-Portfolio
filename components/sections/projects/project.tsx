@@ -17,7 +17,7 @@ export const Project = ({ thumbnail, title, link, description, languageIcons }: 
     <div className="group card flex flex-col items-stretch w-full max-w-[428.4px] p-5 md:p-[18px] gap-5 bg-white dark:bg-neutral-900 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out overflow-hidden z-10">
       {/* Thumbnail */}
       <div className="w-full aspect-video relative rounded-xl overflow-hidden transition-transform duration-300">
-        <Image src={thumbnail} alt={title} fill className="object-cover" />
+        <Image src={thumbnail} alt={title} fill className="object-cover" priority />
       </div>
 
       {/* Title + Link */}
