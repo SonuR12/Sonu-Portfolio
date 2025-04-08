@@ -151,3 +151,8 @@
   }
 }
 
+.html2canvas-friendly * {
+  color: black !important;
+  background-color: white !important;
+}
+
