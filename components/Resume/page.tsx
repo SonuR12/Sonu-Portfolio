@@ -17,7 +17,7 @@ export function Resume() {
       <DialogTrigger asChild>
         <Button
           variant="secondary"
-          className="bg-primary fixed top-4 left-4 z-50 shadow-lg backdrop-blur-md text-white hover:bg-white/20 transition cursor-pointer"
+          className="bg-primary fixed top-4 left-2 z-50 shadow-lg backdrop-blur-md text-white hover:bg-white/20 transition cursor-pointer"
         >
           Resume
         </Button>

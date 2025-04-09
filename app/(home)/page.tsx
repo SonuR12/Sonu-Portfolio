@@ -26,7 +26,7 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main>
+      <main className="-mt-11">
         <Section />
       </main>
 

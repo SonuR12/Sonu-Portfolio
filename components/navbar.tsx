@@ -58,7 +58,7 @@ const Navbar = () => {
     initial={{ y: -20, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.5 }}
-    className="w-fit backdrop-blur-lg bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl"
+    className="w-fit backdrop-blur-lg mr-2 sm:mr-0 bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl"
     >
       <nav ref={navRef}>
         {/* Desktop Navigation */}
