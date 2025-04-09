@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 import Section from "@/components/sections/page";
 import { Resume } from "@/components/Resume/page";
