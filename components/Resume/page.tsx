@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -227,7 +228,7 @@ export function Resume() {
               <ul className="list-disc ml-5 text-gray-700 mt-1 space-y-1 text-sm">
                 <li>
                   <strong>Sonu.Dev – Personal Portfolio:</strong> Sleek,
-                  responsive portfolio built with HTML5, CSS3, and JavaScript to
+                  responsive portfolio built with React, Nextjs, TailwindCSS, Shadcn Ui to
                   showcase skills and projects.
                 </li>
                 <li>
@@ -237,7 +238,7 @@ export function Resume() {
                 </li>
                 <li>
                   <strong>Apple Website Clone:</strong> Pixel-perfect clone of
-                  Apple’s homepage with Tailwind CSS and smooth animations.
+                  Apple’s homepage with HTML, CSS, javaScript and Tailwind CSS.
                 </li>
                 <li>
                   <strong>Antivirus Product Site:</strong> Freelance modern

@@ -55,10 +55,10 @@ const Navbar = () => {
 
   return (
     <motion.div
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-3 sm:left-1/2 -translate-x-1/2 z-[999] w-fit backdrop-blur-lg bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl"
+    initial={{ y: -20, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    className="w-fit backdrop-blur-lg bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl"
     >
       <nav ref={navRef}>
         {/* Desktop Navigation */}
@@ -98,8 +98,8 @@ const Navbar = () => {
             className={`absolute top-0 right-0 w-36 shadow-xl backdrop-blur-xl rounded-md py-4 px-3 z-50 transition-all duration-300 ease-in-out 
               transform ${
                 isOpen
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-full opacity-0 pointer-events-none"
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-full opacity-0 pointer-events-none"
               } bg-white dark:bg-black/90`}
             aria-hidden={!isOpen}
           >
