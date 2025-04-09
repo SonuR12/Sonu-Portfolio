@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
 import Section from "@/components/sections/page";
 import { Resume } from "@/components/Resume/page";
 
 export default function Home() {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -22,11 +22,11 @@ export default function Home() {
 
   return (
     <div>
-     <header className="flex justify-end sm:justify-center sticky top-2 z-[999]">
+      <header className="flex justify-end -right-2 sm:right-0 sm:justify-center items-center fixed top-2 mx-auto w-full z-50">
         <Navbar />
       </header>
 
-      <main className="-mt-11">
+      <main>
         <Section />
       </main>
 
