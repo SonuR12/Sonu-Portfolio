@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Resume } from "./Resume/page";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -59,7 +58,7 @@ const Navbar = () => {
     initial={{ y: -20, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.5 }}>
-      {/* <Resume /> */}
+      
       <nav ref={navRef} className="w-fit backdrop-blur-lg mr-2 sm:mr-0 bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl">
         {/* Desktop Navigation */}
         <div className="hidden sm:flex justify-center items-center gap-6 bg-transparent text-white rounded-md sm:rounded-xl">
