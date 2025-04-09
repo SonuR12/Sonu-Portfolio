@@ -58,7 +58,7 @@ export default function MailForm() {
         <div className="py-2">
           <button
             type="submit"
-            className="flex items-center gap-2 bg-primary/100 text-white px-3 py-3 rounded-xl hover:bg-indigo-800 hover:cursor-pointer transition-all shadow-lg"
+            className="flex items-center gap-2 bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110 text-white px-3 py-3 rounded-xl hover:bg-indigo-800 hover:cursor-pointer transition-all shadow-lg"
           >
             Submit Now
             <span className="bg-white px-4 py-2 rounded-xl text-[#2E1065]">

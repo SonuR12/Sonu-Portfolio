@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -88,16 +89,18 @@ const Hero = () => {
           custom={2}
           variants={textVariants}
         >
-          <Link
-            href="mailto:sonurai272004@gmail.com"
-            className="group self-center bg-primary text-white p-2.5 rounded flex gap-2.5 items-center text-sm md:self-start md:text-xl/6 transition-all"
-          >
-            Let&apos;s connect
-            <img
+          <Link href="mailto:sonurai272004@gmail.com">
+            <Button  className="group self-center bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7]
+             text-white p-2.5 flex gap-2.5 items-center text-sm md:self-start 
+             md:text-xl/6 transition-all shadow-lg hover:brightness-110">
+              Let&apos;s connect
+              <img
               src="/arrow_right_icon.svg"
               alt="Arrow right"
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
+             </Button>
+            
           </Link>
         </motion.div>
       </div>

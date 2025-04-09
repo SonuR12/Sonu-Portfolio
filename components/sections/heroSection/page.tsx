@@ -14,6 +14,14 @@ export const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-[795px] bg-repeat-x bg-[url('/top_bg_dark.svg')] bg-[auto_auto] hidden md:dark:block z-0" />
       <div className="absolute top-0 left-0 w-full min-h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_dark.svg')] bg-[auto_auto] hidden dark:block dark:md:hidden z-0" />
 
+{/* <img
+src="hero.svg"
+        alt="Top dark mode background highlights"
+        width={809}
+        height={877}
+        className="absolute top-0 left-0 w-full h-[600px] bg-repeat-x bg-[auto_auto] dark:hidden md:hidden block z-0 pointer-events-none"
+      /> */}
+
       {/* Highlight SVGs */}
       <img
         src="/top_highlight.svg"

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,13 +16,14 @@ export function Resume() {
       <DialogTrigger asChild>
         <Button
           variant="secondary"
-          className="bg-primary fixed top-4 left-2 z-50 shadow-lg backdrop-blur-md text-white hover:bg-white/20 transition cursor-pointer"
+          className="fixed top-4 left-2 z-50 shadow-lg backdrop-blur-md text-white cursor-pointer transition
+             bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110"
         >
           Resume
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto bg-white text-gray-900 rounded-xl shadow-xl px-6 py-6">
+      <DialogContent className="sm:max-w-[800px] z-[1000] max-h-[90vh] overflow-y-auto bg-white text-gray-900 rounded-xl shadow-xl px-6 py-6">
         {/* Required for accessibility */}
         <DialogHeader>
           <DialogTitle className="hidden">Sonu Rai Resume</DialogTitle>
@@ -36,7 +36,7 @@ export function Resume() {
             alt="Profile"
             width={120}
             height={120}
-            className="rounded-lg object-cover border border-gray-200 shadow-xl w-1/4"
+            className="rounded-lg object-cover border border-gray-200 shadow-xl w-1/2 sm:w-1/4"
           />
           <div className="flex flex-col items-start space-y-1 w-3/4">
             <h1 className="text-3xl font-bold uppercase">Sonu Rai</h1>
@@ -58,7 +58,7 @@ export function Resume() {
                 <Image height={20} width={20} src="/gmail.svg" alt="Gmail" />
                 &nbsp;
                 <Link
-                target="_blank"
+                  target="_blank"
                   href="mailto:sonurai272004@gmail.com"
                   className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
                 >
@@ -74,7 +74,7 @@ export function Resume() {
                 />
                 &nbsp;
                 <Link
-                target="_blank"
+                  target="_blank"
                   href="https://www.linkedin.com/in/sonu-rai-r12/"
                   className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
                 >
@@ -85,7 +85,7 @@ export function Resume() {
                 <Image height={20} width={20} src="/github.svg" alt="Github" />
                 &nbsp;
                 <Link
-                target="_blank"
+                  target="_blank"
                   href="https://github.com/SonuR12/"
                   className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
                 >
@@ -228,13 +228,8 @@ export function Resume() {
               <ul className="list-disc ml-5 text-gray-700 mt-1 space-y-1 text-sm">
                 <li>
                   <strong>Sonu.Dev – Personal Portfolio:</strong> Sleek,
-                  responsive portfolio built with React, Nextjs, TailwindCSS, Shadcn Ui to
-                  showcase skills and projects.
-                </li>
-                <li>
-                  <strong>Mentor Mind:</strong> AI-powered mentorship app that
-                  recommends custom roadmaps using Gemini API and Next.js (Team
-                  Project).
+                  responsive portfolio built with React, Nextjs, TailwindCSS,
+                  Shadcn Ui to showcase skills and projects.
                 </li>
                 <li>
                   <strong>Apple Website Clone:</strong> Pixel-perfect clone of
@@ -336,7 +331,10 @@ export function Resume() {
 
         {/* Footer */}
         <DialogFooter className="mt-6 justify-end">
-          <Button disabled className="text-white bg-indigo-600 hover:bg-gray-700 mt-6">
+          <Button
+            disabled
+            className="text-white bg-indigo-600 hover:bg-gray-700 mt-6"
+          >
             Save Resume
           </Button>
         </DialogFooter>
