@@ -22,16 +22,17 @@ export default function Home() {
 
   return (
     <div>
-      <header className="flex justify-end -right-2 sm:right-0 sm:justify-center items-center fixed top-2 mx-auto w-full z-50">
+     <header className="flex justify-end sm:justify-center sticky top-2 z-[999]">
+     <Resume />
         <Navbar />
       </header>
 
-      <main>
+      <main className="-mt-11">
         <Section />
       </main>
 
       {/* Resume Button */}
-      <Resume />
+
     </div>
   );
 }
