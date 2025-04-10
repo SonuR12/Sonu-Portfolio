@@ -151,7 +151,26 @@
   .mailform{
     display: none;
   }
+  
 }
+@media screen and (max-width: 500px) {
+  .hero{
+    flex-direction: column-reverse;
+  }
+  
+}
+@media screen and (max-width: 500px) {
+  .leadingsnugtext{
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero{
+    padding-top: 2rem;
+  }
+}
+
 
 .html2canvas-friendly * {
   color: black !important;

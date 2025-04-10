@@ -4,7 +4,7 @@
       "title": "Personal Portfolio",
       "link": {
         "label": "Sonu.Dev",
-        "url": "https://sonu-portfolio-puce.vercel.app/"
+        "url": "https://sonu-portfolio-mu.vercel.app/"
       },
       "description": "Crafted a sleek and responsive portfolio to showcase my projects and technical skills using HTML5, CSS3, and JavaScript.",
       "languageIcons": ["/images/react_icon.png",
@@ -16,7 +16,7 @@
     },
     {
       "thumbnail": "/images/mentor_mind.png",
-      "title": "AI Mentor Assistant",
+      "title": "AI Mentor (Team Project)",
       "link": {
         "label": "Mentor Mind",
         "url": "https://mentor-mind-app.vercel.app"

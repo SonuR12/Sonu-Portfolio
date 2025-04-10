@@ -55,11 +55,11 @@ const imageAnimationVariants = {
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col-reverse sm:flex-row items-center z-20 mx-auto md:gap-[37px] md:mx-10">
+    <section className="relative flex hero flex-row items-center z-20 mx-auto lg:gap-[37px] lg:mx-10">
       {/* Text Section */}
-      <div className="flex flex-col gap-[13px] md:gap-[34px] md:my-[58px] md:items-start items-center">
+      <div className="flex flex-col gap-[13px] items-center md:gap-[34px] md:my-[58px] md:items-start pl-10 sm:pl-0 leadingsnugtext">
         <motion.h1
-          className="text-center md:text-left text-2xl md:text-4xl font-semibold leading-snug lg:w-[470px]"
+          className="text-center md:text-left text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug lg:w-[470px]"
           initial="hidden"
           animate="visible"
           custom={0}
@@ -67,7 +67,7 @@ const Hero = () => {
         >
           <span className="inline-block -ml-2">✌️</span> Hello, I&apos;m Sonu
           Rai, I&apos;m a{" "}
-          <span className="md:inline block text-[27px] md:text-[45px] highlight mt-3 md:mt-0">
+          <span className="md:inline block text-[27px] md:text-[35px] lg:text-[45px] highlight mt-3 md:mt-0">
             Software Engineer
           </span>
         </motion.h1>
@@ -88,11 +88,11 @@ const Hero = () => {
           animate="visible"
           custom={2}
           variants={textVariants}
-          className="flex items-center md:items-start flex-col"
+          className="flex items-center md:items-start flex-col z-10"
         >
           <Link href="mailto:sonurai272004@gmail.com">
             <Button
-              className="group self-center bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7]
+              className="group self-center z-10 bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7]
              text-white p-2.5 flex gap-2.5 items-center text-sm md:self-start 
              md:text-xl/6 transition-all shadow-lg hover:brightness-110"
             >
@@ -116,20 +116,6 @@ const Hero = () => {
 
       {/* Image Section */}
       <div className="relative min-w-[300px] md:min-w-[360px] h-[380px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl flex items-center justify-center">
-        {/* ICON BEHIND PROFILE */}
-        <motion.div
-          className="circle-icon absolute -z-20 bg-opacity-[12%] -top-[170px] left-[960px]"
-          initial={{ x: 150, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-        >
-          <Image
-            src="/svg/stack_icon.svg"
-            alt="Stack Icon"
-            height={30}
-            width={30}
-          />
-        </motion.div>
 
         {/* PROFILE CONTAINER */}
         <div className="relative block w-[220px] h-[280px] md:w-[360px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">

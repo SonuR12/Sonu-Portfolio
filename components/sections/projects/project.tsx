@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   thumbnail: string;
@@ -26,7 +27,19 @@ export const Project = ({
   languageIcons,
 }: Props) => {
   const [videoError, setVideoError] = useState(false);
-  const hasVideo = video && !videoError;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
+
+  const hasVideo = video && !videoError && !videoEnded;
+
+  const handlePreviewClick = () => {
+    if (!videoError && video) {
+      setIsPlaying(true);
+      setVideoEnded(false); // reset if previously ended
+    } else {
+      setIsPlaying(true); // Set to true even when video not available to show fallback message
+    }
+  };
 
   return (
     <CardContainer className="inter-var -mb-36">
@@ -42,42 +55,86 @@ export const Project = ({
             priority
           />
 
-          {/* === Mobile View: show video if available === */}
+          {/* Mobile: Show video or fallback only after clicking Preview */}
           <div className="absolute top-0 left-0 w-full h-full block md:hidden">
-            {hasVideo ? (
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                onError={() => setVideoError(true)}
-              >
-                <source src={video} type="video/mp4" />
-              </video>
+            {isPlaying ? (
+              hasVideo ? (
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop={false}
+                  playsInline
+                  onError={() => setVideoError(true)}
+                  onEnded={() => setVideoEnded(true)}
+                >
+                  <source src={video} type="video/mp4" />
+                </video>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-black/70 text-white text-xs font-semibold text-center px-2">
+                  <span>
+                    {videoEnded
+                      ? "Preview ended. Please Visit Site"
+                      : "Preview not available. Please Visit Site"}
+                    <br />
+                    <Link
+                      href={link.url}
+                      target="_blank"
+                      className="hover:underline text-blue-300 mt-1 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  </span>
+                </div>
+              )
             ) : null}
           </div>
 
-          {/* === Desktop Hover Effects === */}
+          {/* Desktop Hover Effects */}
           <div className="absolute top-0 left-0 w-full h-full hidden md:block">
             {hasVideo ? (
               <video
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 autoPlay
                 muted
-                loop
+                loop={false}
                 playsInline
                 onError={() => setVideoError(true)}
+                onEnded={() => setVideoEnded(true)}
               >
                 <source src={video} type="video/mp4" />
               </video>
             ) : (
               <div
                 className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 
-                  w-full h-full flex items-center justify-center 
-                  bg-black bg-opacity-50 text-white text-sm font-semibold"
+                w-full h-full flex items-center justify-center 
+                bg-black bg-opacity-50 text-white text-sm font-semibold text-center px-2"
               >
-                Preview Unavailable
+                {videoEnded ? (
+                  <span>
+                    Preview ended. Please Visit Site
+                    <br />
+                    <Link
+                      href={link.url}
+                      target="_blank"
+                      className="hover:underline text-blue-300 mt-1 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  </span>
+                ) : (
+                  <span>
+                    Preview not available. Please Visit Site
+                    <br />
+                    <Link
+                      href={link.url}
+                      target="_blank"
+                      className=" hover:underline text-blue-300 mt-1 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  </span>
+                )}
               </div>
             )}
           </div>
@@ -97,6 +154,14 @@ export const Project = ({
             {link.label}
           </CardItem>
         </div>
+
+        {/* Preview Button for Mobile */}
+        <Button
+          onClick={handlePreviewClick}
+          className="h-6 px-1.5 rounded-sm my-1 flex sm:hidden"
+        >
+          Preview
+        </Button>
 
         {/* Description */}
         <CardItem

@@ -37,6 +37,7 @@ export function Resume() {
             width={120}
             height={120}
             className="rounded-lg object-cover border border-gray-200 shadow-xl w-1/2 sm:w-1/4"
+            priority
           />
           <div className="flex flex-col items-start space-y-1 w-3/4">
             <h1 className="text-3xl font-bold uppercase">Sonu Rai</h1>
