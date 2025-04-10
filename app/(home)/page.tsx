@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div>
      <header className="flex justify-end sm:justify-center sticky top-2 z-[999]">
-            <Resume />
+        <Resume />
         <Navbar />
       </header>
 

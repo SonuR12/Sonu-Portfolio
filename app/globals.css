@@ -46,10 +46,11 @@
   --radius: 0.625rem;
   --background: #ffffff;
   --foreground: #333333;
-  --primary: #522ffe;
+  --primary: linear-gradient(to bottom right, #6748FF, #5a3ee0, #4c32c7);
   --card: #ffffff;
   --card-foreground: oklch(0.145 0 0);
 }
+
 
 .dark {
   --background: #030304;
@@ -88,7 +89,7 @@
   }
 
   .card{
-    @apply bg-card rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)];
+    @apply rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)];
   }
 }
 

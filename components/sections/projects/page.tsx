@@ -18,17 +18,29 @@ type ProjectType = {
   };
   description: string;
   languageIcons: string[];
+  video: string;
 };
 
 export const Projects = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
   const [showProjects, setShowProjects] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   // Load project data
   useEffect(() => {
     setProjects(rawProjects as unknown as ProjectType[]);
+  }, []);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's md breakpoint
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Delay showing projects after intro animation
@@ -39,12 +51,20 @@ export const Projects = () => {
     }
   }, [isInView]);
 
-  // Animation properties (scale in from center)
+  // Animation properties
   const getMotionProps = (delay: number) => {
+    if (isMobile) {
+      return {
+        initial: { y: 50, opacity: 0 },
+        animate: isInView ? { y: 0, opacity: 1 } : {},
+        transition: { duration: 0.5, ease: "easeOut", delay },
+      };
+    }
+
     return {
       initial: { scale: 0.5, opacity: 0 },
       animate: isInView ? { scale: 1, opacity: 1 } : {},
-      transition: { type: "spring", stiffness: 80, damping: 14, delay },
+      transition: { type: "spring", stiffness: 80, damping: 10, delay },
     };
   };
 
@@ -55,18 +75,19 @@ export const Projects = () => {
 
         {/* Section fade-in */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : {}}
+          initial={isMobile ? { y: 50, opacity: 0 } : { scale: 0.8, opacity: 0 }}
+          animate={isInView ? { y: 0, scale: 1, opacity: 1 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           {showProjects && (
             <div className="lg:w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
               {projects.map((project, idx) => {
-                const delay = idx * 0.5;
+                const delay = idx * 0.3;
                 return (
                   <motion.div key={idx} {...getMotionProps(delay)}>
                     <Project
                       thumbnail={project.thumbnail}
+                      video={project.video}
                       title={project.title}
                       link={project.link}
                       description={project.description}

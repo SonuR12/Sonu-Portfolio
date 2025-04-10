@@ -71,7 +71,7 @@ const Navbar = () => {
                 className={`sm:px-3 sm:py-1.5 px-1 py-1 rounded-sm sm:rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-primary text-white"
-                    : "text-[#7e65fb] hover:text-white hover:bg-primary"
+                    : "text-indigo-500 filter brightness-110 hover:text-white hover:bg-primary"
                 }`}
               >
                 {item.name}
@@ -87,9 +87,9 @@ const Navbar = () => {
             className="flex flex-col justify-end items-end gap-1 bg-transparent p-2 rounded-md drop-shadow-xl"
             aria-label="Open navigation menu"
           >
-            <div className="w-4 h-[2px] bg-violet-500 rounded" />
-            <div className="w-2 h-[2px] bg-violet-500 rounded" />
-            <div className="w-3 h-[2px] bg-violet-500 rounded" />
+            <div className="w-4 h-[2px] bg-primary rounded" />
+            <div className="w-2 h-[2px] bg-primary rounded" />
+            <div className="w-3 h-[2px] bg-primary rounded" />
           </button>
 
           {/* Slide-in Mobile Menu */}
@@ -112,8 +112,8 @@ const Navbar = () => {
                       onClick={() => scrollToSection(item.href)}
                       className={`px-2 py-1 w-fit text-left rounded-sm sm:rounded-md text-sm font-medium transition-all duration-200 ${
                         isActive
-                          ? "bg-violet-500 text-white"
-                          : "text-violet-500 hover:text-white hover:bg-black"
+                          ? "bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110 text-white"
+                          : "text-[#5a3ee0] filter brightness-110 hover:text-white hover:bg-black"
                       }`}
                     >
                       {item.name}

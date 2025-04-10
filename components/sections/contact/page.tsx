@@ -13,7 +13,7 @@ export const Contact = () => {
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       className="mx-4 sm:mx-10 md:mx-16 flex items-center flex-col gap-20"
     >
       <SectionHeader
@@ -47,7 +47,7 @@ export const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0 }}
             viewport={{ once: true }}
             className="w-full p-4 sm:p-8 flex flex-col gap-10 rounded-xl relative z-20"
           >

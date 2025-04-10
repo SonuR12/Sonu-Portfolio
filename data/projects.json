@@ -11,7 +11,8 @@
       "/tailwind_icon.png",
       "/ts_icon.png",
       "/shadcn_icon.png",
-      "/next_icon.png"]
+      "/next_icon.png"],
+      "video": "/videos/1.mp4"
     },
     {
       "thumbnail": "/mentor_mind.png",
@@ -29,7 +30,8 @@
         "/node_icon.png",
         "/shadcn_icon.png",
         "/next_icon.png"
-      ]
+      ],
+      "video": "/videos/2.mp4"
     },
     {
       "thumbnail": "/ecommerce_thumbnail.png",
@@ -45,7 +47,8 @@
         "/mongo_icon.png",
         "/node_icon.png",
         "/shadcn_icon.png",
-        "/next_icon.png"]
+        "/next_icon.png"],
+        "video": "/videos/3.mp4"
     },
     {
       "thumbnail": "/apple_thumbnail.png",
@@ -55,7 +58,8 @@
         "url": "https://creative-marshmallow-d7d8bb.netlify.app"
       },
       "description": "A pixel-perfect clone of Apple's homepage built with HTML, Tailwind CSS, and JavaScript. Fully responsive with smooth transitions, animated scrolling, and interactive UI elements to replicate Apple's sleek design and user experience.",
-      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"]
+      "languageIcons": ["/html_icon.png", "/css_icon.png", "/js_icon.png"],
+      "video": "/videos/4.mp4"
     },
     {
       "thumbnail": "/antivirus_thumbnail.png",

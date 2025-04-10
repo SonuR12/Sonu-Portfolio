@@ -19,9 +19,23 @@ type AnimatedSkill = SkillType & {
 
 const Skills = () => {
   const [animatedSkills, setAnimatedSkills] = useState<AnimatedSkill[]>([]);
-
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true }); // runs only once
+  const [amount, setAmount] = useState(1.0); // Default for large screens
+
+  useEffect(() => {
+    const handleResize = () => {
+      setAmount(window.innerWidth < 768 ? 0.5 : 1.0);
+    };
+
+    handleResize(); // Initial run
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isInView = useInView(sectionRef, {
+    once: false,
+    amount,
+  });
 
   useEffect(() => {
     if (isInView && animatedSkills.length === 0) {
@@ -33,10 +47,15 @@ const Skills = () => {
     }
   }, [isInView, animatedSkills.length]);
 
-  const getMotionProps = (direction: "left" | "right") => ({
-    initial: { x: direction === "left" ? "-100vw" : "100vw", opacity: 0 },
-    animate: { x: 0, opacity: 1 },
-    transition: { type: "spring", stiffness: 60, damping: 15 },
+  const getMotionProps = (direction: "left" | "right", delay: number) => ({
+    initial: { x: direction === "left" ? "-100%" : "100%", opacity: 0 },
+    animate: isInView ? { x: 0, opacity: 1 } : {},
+    transition: {
+      type: "spring",
+      stiffness: 60,
+      damping: 15,
+      delay,
+    },
   });
 
   return (
@@ -47,15 +66,11 @@ const Skills = () => {
       >
         <SectionHeader plainText="👨‍💻 This is my" highlightText="Tech Stacks" />
 
-        <div className="card w-full px-[33px] py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px]">
+        <div className="card w-full px-[33px] py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px] overflow-hidden">
           {animatedSkills.map((skill, idx) => (
             <motion.div
               key={idx}
-              {...getMotionProps(skill.direction)}
-              transition={{
-                ...getMotionProps(skill.direction).transition,
-                delay: idx * 0.05,
-              }}
+              {...getMotionProps(skill.direction, idx * 0.05)}
             >
               <Skill name={skill.name} icon={skill.icon} />
             </motion.div>

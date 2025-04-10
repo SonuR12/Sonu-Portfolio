@@ -333,7 +333,7 @@ export function Resume() {
         <DialogFooter className="mt-6 justify-end">
           <Button
             disabled
-            className="text-white bg-indigo-600 hover:bg-gray-700 mt-6"
+            className="text-white bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110 hover:bg-gray-700 mt-6"
           >
             Save Resume
           </Button>
