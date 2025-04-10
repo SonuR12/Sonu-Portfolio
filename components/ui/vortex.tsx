@@ -17,6 +17,8 @@ interface VortexProps {
   backgroundColor?: string;
 }
 
+/* eslint-disable-next-line */
+
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
