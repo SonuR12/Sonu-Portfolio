@@ -32,7 +32,7 @@ export function Resume() {
         {/* Header with photo, name, role and contact */}
         <div className="flex flex-col sm:flex-row items-center self-start justify-between gap-6 border-b pb-6 w-full">
           <Image
-            src="/profile_picture.png"
+            src="/images/profile_picture.png"
             alt="Profile"
             width={120}
             height={120}
@@ -55,7 +55,7 @@ export function Resume() {
               </p>
               <p className="flex">
                 {/* mail */}
-                <Image height={20} width={20} src="/gmail.svg" alt="Gmail" />
+                <Image height={20} width={20} src="/svg/gmail.svg" alt="Gmail" />
                 &nbsp;
                 <Link
                   target="_blank"
@@ -69,7 +69,7 @@ export function Resume() {
                 <Image
                   height={20}
                   width={20}
-                  src="/linkdin.svg"
+                  src="/svg/linkdin.svg"
                   alt="LinkedIn"
                 />
                 &nbsp;
@@ -82,7 +82,7 @@ export function Resume() {
                 </Link>
               </p>
               <p className="flex">
-                <Image height={20} width={20} src="/github.svg" alt="Github" />
+                <Image height={20} width={20} src="/svg/github.svg" alt="Github" />
                 &nbsp;
                 <Link
                   target="_blank"
@@ -166,7 +166,7 @@ export function Resume() {
                     <Image
                       height={20}
                       width={20}
-                      src="/linkdin.svg"
+                      src="/svg/linkdin.svg"
                       alt="LinkedIn"
                     />
                   </a>
@@ -181,7 +181,7 @@ export function Resume() {
                     <Image
                       height={20}
                       width={20}
-                      src="/linkdin.svg"
+                      src="/svg/linkdin.svg"
                       alt="LinkedIn"
                     />
                   </Link>
@@ -196,7 +196,7 @@ export function Resume() {
                     <Image
                       height={20}
                       width={20}
-                      src="/linkdin.svg"
+                      src="/svg/linkdin.svg"
                       alt="LinkedIn"
                     />
                   </Link>

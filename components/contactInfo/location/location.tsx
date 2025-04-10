@@ -10,7 +10,7 @@ const locations = [
     title: "Address",
     address: "G-120, Saurabh Vihar, Jaitpur, Badarpur, New Delhi, South Delhi, New Delhi - 110044",
     phone: "+91 9905757864",
-    map: "/map.png",
+    map: "/images/map.png",
   },
 ];
 
@@ -70,12 +70,13 @@ const Location = () => {
               <span className="pulse-ring pulse-ring-2 border-indigo-200" />
               <span className="pulse-ring pulse-ring-3 border-indigo-100" />
               <Image
+              loading="lazy"
                 height={100}
                 width={100}
                 src={loc.map}
                 alt={`${loc.address} map`}
                 className="relative z-10 rounded-full border-2 border-gray-200 py-2"
-                priority
+               
               />
             </div>
           </motion.div>
