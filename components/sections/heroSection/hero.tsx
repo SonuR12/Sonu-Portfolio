@@ -108,59 +108,77 @@ const Hero = () => {
               Curious to know more?
             </span>
             <br />
-            <span>Check out my resume for details.</span>
+            <span>Check out my resume for more details.</span>
           </p>
         </motion.div>
       </div>
 
       {/* Image Section */}
       <div className="relative hidden md:block min-w-[360px] h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
+        {/* ICON BEHIND PROFILE */}
         <motion.div
-          className="absolute right-0 -z-10"
-          initial="hidden"
-          animate="visible"
-          variants={imageAnimationVariants.light}
+          className="circle-icon absolute -z-20 bg-opacity-[12%] -top-[170px] left-[960px]"
+          initial={{ x: 150, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/profile_light_purple.png"
-            alt="Light Profile"
-            width={372}
-            height={430}
-            className="w-[372px] h-[430px]"
-            priority
+            src="/stack_icon.svg"
+            alt="Stack Icon"
+            height={30}
+            width={30}
           />
         </motion.div>
 
-        <motion.div
-          className="absolute right-0 -z-10"
-          initial="hidden"
-          animate="visible"
-          variants={imageAnimationVariants.dark}
-        >
-          <Image
-            src="/profile_dark_purple.png"
-            alt="Dark Profile"
-            width={372}
-            height={430}
-            className="w-[372px] h-[430px]"
-            priority
-          />
-        </motion.div>
+        {/* PROFILE CONTAINER */}
+        <div className="relative hidden md:block min-w-[360px] h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
+          <motion.div
+            className="absolute right-0"
+            initial="hidden"
+            animate="visible"
+            variants={imageAnimationVariants.light}
+          >
+            <Image
+              src="/profile_light_purple.png"
+              alt="Light Profile"
+              width={372}
+              height={430}
+              className="w-[372px] h-[430px]"
+              priority
+            />
+          </motion.div>
 
-        <motion.div
-          initial="hidden"
-          animate={["visible", "float"]}
-          variants={imageAnimationVariants.profile}
-        >
-          <Image
-            src="/profile_picture.png"
-            alt="Profile Image"
-            width={357}
-            height={417}
-            className="min-w-[360px] h-[412px] z-10 mr-[6px] my-[8px] rounded-xl"
-            priority
-          />
-        </motion.div>
+          <motion.div
+            className="absolute right-0"
+            initial="hidden"
+            animate="visible"
+            variants={imageAnimationVariants.dark}
+          >
+            <Image
+              src="/profile_dark_purple.png"
+              alt="Dark Profile"
+              width={372}
+              height={430}
+              className="w-[372px] h-[430px]"
+              priority
+            />
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={["visible", "float"]}
+            variants={imageAnimationVariants.profile}
+          >
+            <Image
+              src="/profile_picture.png"
+              alt="Profile Image"
+              width={357}
+              height={417}
+              className="min-w-[360px] h-[412px] mr-[6px] my-[8px] rounded-xl"
+              priority
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

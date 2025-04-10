@@ -2,18 +2,29 @@ import Image from "next/image";
 import React from "react";
 import Hero from "./hero";
 import { motion } from "framer-motion";
+import { Vortex } from "@/components/ui/vortex";
 
 export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="w-full relative overflow-hidden z-10 pt-30 md:pt-52"
+      className="w-full relative overflow-hidden z-10 "
     >
       {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-full h-[795px] bg-repeat-x bg-[url('/top_bg_light.svg')] bg-[auto_auto] dark:hidden hidden md:block z-0" />
+      {/* <div className="absolute top-0 left-0 w-full h-[795px] bg-repeat-x bg-[url('/top_bg_light.svg')] bg-[auto_auto] dark:hidden hidden md:block z-0" />
       <div className="absolute top-0 left-0 w-full h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_light.svg')] bg-[auto_auto] dark:hidden md:hidden block z-0" />
       <div className="absolute top-0 left-0 w-full h-[795px] bg-repeat-x bg-[url('/top_bg_dark.svg')] bg-[auto_auto] hidden md:dark:block z-0" />
-      <div className="absolute top-0 left-0 w-full min-h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_dark.svg')] bg-[auto_auto] hidden dark:block dark:md:hidden z-0" />
+      <div className="absolute top-0 left-0 w-full min-h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_dark.svg')] bg-[auto_auto] hidden dark:block dark:md:hidden z-0" /> */}
+      <div className="w-[calc(100%-4rem)] mx-auto rounded-md h-full overflow-hidden pt-32 md:pt-40">
+        <Vortex
+          backgroundColor="black"
+          className="flex items-center justify-center px-2 md:px-10 py-4 w-full h-full border-none shadow-lg"
+        >
+          <main className="flex flex-col gap-[142px] relative max-w-screen-lg mx-auto z-10">
+          <Hero />
+          </main>
+        </Vortex>
+      </div>
 
       {/* <img
 src="hero.svg"
@@ -43,7 +54,7 @@ src="hero.svg"
       <div className="relative max-w-screen-lg mx-auto z-10">
         {/* Icon 1: Rocket (from the left) */}
         <motion.div
-          className="circle-icon absolute z-10 -top-32 left-[180px] md:-top-32 md:left-72"
+          className="circle-icon absolute z-10 -top-40 left-[180px] md:-top-140 md:left-72"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
@@ -58,7 +69,7 @@ src="hero.svg"
 
         {/* Icon 2: Merge (from the top) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] top-[10px] left-2 md:-top-12 md:left-[610px]"
+          className="circle-icon absolute z-10 bg-opacity-[12%] top-[10px] left-2 md:-top-124 md:left-[610px]"
           initial={{ y: -120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
@@ -73,7 +84,7 @@ src="hero.svg"
 
         {/* Icon 3: Bracket (from the bottom) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] top-[160px] left-2 md:top-10 md:left-0"
+          className="circle-icon absolute z-10 bg-opacity-[12%] top-[160px] left-2 md:-top-82 md:-left-20"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
@@ -88,7 +99,7 @@ src="hero.svg"
 
         {/* Icon 4: GitHub (from the right) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] -top-[40px] left-4 md:top-[350px] md:left-56"
+          className="circle-icon absolute z-10 bg-opacity-[12%] -top-[40px] left-4 md:-top-32 md:left-80"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
@@ -103,7 +114,7 @@ src="hero.svg"
 
         {/* Icon 5: Electricity (from bottom) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] top-[350px] left-[570px]"
+          className="circle-icon absolute z-10 bg-opacity-[12%] -top-28 left-[570px]"
           initial={{ y: 120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
@@ -118,7 +129,7 @@ src="hero.svg"
 
         {/* Icon 6: Stack (from right) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] top-[170px] left-[960px]"
+          className="circle-icon absolute z-10 bg-opacity-[12%] -top-[170px] left-[960px]"
           initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
@@ -132,9 +143,9 @@ src="hero.svg"
         </motion.div>
 
         {/* Main Hero Content */}
-        <main className="flex flex-col gap-[142px] relative z-20">
+        {/* <main className="flex flex-col gap-[142px] relative z-20">
           <Hero />
-        </main>
+        </main> */}
       </div>
     </section>
   );
