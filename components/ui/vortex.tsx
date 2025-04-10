@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
@@ -17,7 +18,6 @@ interface VortexProps {
   backgroundColor?: string;
 }
 
-/* eslint-disable-next-line */
 
 export const Vortex = (props: VortexProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
