@@ -71,7 +71,7 @@ const Navbar = () => {
                 className={`sm:px-3 sm:py-1.5 px-1 py-1 rounded-sm sm:rounded-md text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-primary text-white"
-                    : "text-indigo-500 filter brightness-110 hover:text-white hover:bg-primary"
+                    : "text-primary filter brightness-120 hover:text-white hover:bg-primary"
                 }`}
               >
                 {item.name}
@@ -113,7 +113,7 @@ const Navbar = () => {
                       className={`px-2 py-1 w-fit text-left rounded-sm sm:rounded-md text-sm font-medium transition-all duration-200 ${
                         isActive
                           ? "bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110 text-white"
-                          : "text-[#5a3ee0] filter brightness-110 hover:text-white hover:bg-black"
+                          : "text-primary hover:text-white hover:bg-black"
                       }`}
                     >
                       {item.name}

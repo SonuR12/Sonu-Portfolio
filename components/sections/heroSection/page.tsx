@@ -15,7 +15,7 @@ export const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_light.svg')] bg-[auto_auto] dark:hidden md:hidden block z-0" />
       <div className="absolute top-0 left-0 w-full h-[795px] bg-repeat-x bg-[url('/top_bg_dark.svg')] bg-[auto_auto] hidden md:dark:block z-0" />
       <div className="absolute top-0 left-0 w-full min-h-[600px] bg-repeat-x bg-[url('/top_bg_mobile_dark.svg')] bg-[auto_auto] hidden dark:block dark:md:hidden z-0" /> */}
-      <div className="w-[calc(100%-4rem)] mx-auto rounded-md h-full overflow-hidden pt-32 md:pt-40">
+      <div className="w-full mx-auto rounded-md h-full overflow-hidden pt-10 md:pt-40">
         <Vortex
           backgroundColor="black"
           className="flex items-center justify-center px-2 md:px-10 py-4 w-full h-full border-none shadow-lg"
@@ -36,14 +36,14 @@ src="hero.svg"
 
       {/* Highlight SVGs */}
       <img
-        src="/top_highlight.svg"
+        src="/svg/top_highlight.svg"
         alt="Top dark mode background highlights"
         width={809}
         height={877}
         className="absolute top-[-515px] hidden dark:md:block left-1/2 -translate-x-1/2 z-0 pointer-events-none"
       />
       <img
-        src="/top_highlight_mobile.svg"
+        src="/svg/top_highlight_mobile.svg"
         alt="Top dark mode mobile highlights"
         width={429}
         height={465}
@@ -60,7 +60,7 @@ src="hero.svg"
           transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/rocket_icon.svg"
+            src="/svg/rocket_icon.svg"
             alt="Rocket Icon"
             height={30}
             width={30}
@@ -75,7 +75,7 @@ src="hero.svg"
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/merge_icon.svg"
+            src="/svg/merge_icon.svg"
             alt="Merge Icon"
             height={30}
             width={30}
@@ -90,7 +90,7 @@ src="hero.svg"
           transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/bracket_icon.svg"
+            src="/svg/bracket_icon.svg"
             alt="Bracket Icon"
             height={30}
             width={30}
@@ -105,7 +105,7 @@ src="hero.svg"
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/github_icon.svg"
+            src="/svg/github_icon.svg"
             alt="Github Icon"
             height={30}
             width={30}
@@ -120,7 +120,7 @@ src="hero.svg"
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/electricity_icon.svg"
+            src="/svg/electricity_icon.svg"
             alt="Electricity Icon"
             height={30}
             width={30}
@@ -135,7 +135,7 @@ src="hero.svg"
           transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/stack_icon.svg"
+            src="/svg/stack_icon.svg"
             alt="Stack Icon"
             height={30}
             width={30}

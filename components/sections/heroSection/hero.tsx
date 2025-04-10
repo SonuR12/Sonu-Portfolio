@@ -55,11 +55,11 @@ const imageAnimationVariants = {
 
 const Hero = () => {
   return (
-    <section className="relative flex items-center z-20 mx-auto md:gap-[37px] md:mx-10">
+    <section className="relative flex flex-col-reverse sm:flex-row items-center z-20 mx-auto md:gap-[37px] md:mx-10">
       {/* Text Section */}
       <div className="flex flex-col gap-[13px] md:gap-[34px] md:my-[58px] md:items-start items-center">
         <motion.h1
-          className="text-center md:text-left text-2xl md:text-4xl font-semibold leading-snug"
+          className="text-center md:text-left text-2xl md:text-4xl font-semibold leading-snug lg:w-[470px]"
           initial="hidden"
           animate="visible"
           custom={0}
@@ -73,7 +73,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="text-center text-sm mx-6 md:text-start md:mx-0 md:text-[22px]"
+          className="text-center text-sm mx-auto w-3/4 md:text-start md:mx-0 md:text-[22px]"
           initial="hidden"
           animate="visible"
           custom={1}
@@ -88,6 +88,7 @@ const Hero = () => {
           animate="visible"
           custom={2}
           variants={textVariants}
+          className="flex items-center md:items-start flex-col"
         >
           <Link href="mailto:sonurai272004@gmail.com">
             <Button
@@ -97,7 +98,7 @@ const Hero = () => {
             >
               Let&apos;s connect
               <img
-                src="/arrow_right_icon.svg"
+                src="/svg/arrow_right_icon.svg"
                 alt="Arrow right"
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
@@ -114,7 +115,7 @@ const Hero = () => {
       </div>
 
       {/* Image Section */}
-      <div className="relative hidden md:block min-w-[360px] h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
+      <div className="relative min-w-[300px] md:min-w-[360px] h-[380px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl flex items-center justify-center">
         {/* ICON BEHIND PROFILE */}
         <motion.div
           className="circle-icon absolute -z-20 bg-opacity-[12%] -top-[170px] left-[960px]"
@@ -123,7 +124,7 @@ const Hero = () => {
           transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/stack_icon.svg"
+            src="/svg/stack_icon.svg"
             alt="Stack Icon"
             height={30}
             width={30}
@@ -131,7 +132,8 @@ const Hero = () => {
         </motion.div>
 
         {/* PROFILE CONTAINER */}
-        <div className="relative hidden md:block min-w-[360px] h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
+        <div className="relative block w-[220px] h-[280px] md:w-[360px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
+          {/* Light BG */}
           <motion.div
             className="absolute right-0"
             initial="hidden"
@@ -139,15 +141,16 @@ const Hero = () => {
             variants={imageAnimationVariants.light}
           >
             <Image
-              src="/profile_light_purple.png"
+              src="/images/profile_light_purple.png"
               alt="Light Profile"
               width={372}
               height={430}
-              className="w-[372px] h-[430px]"
+              className="w-[220px] h-[280px] md:w-[372px] md:h-[430px]"
               priority
             />
           </motion.div>
 
+          {/* Dark BG */}
           <motion.div
             className="absolute right-0"
             initial="hidden"
@@ -155,26 +158,27 @@ const Hero = () => {
             variants={imageAnimationVariants.dark}
           >
             <Image
-              src="/profile_dark_purple.png"
+              src="/images/profile_dark_purple.png"
               alt="Dark Profile"
               width={372}
               height={430}
-              className="w-[372px] h-[430px]"
+              className="w-[220px] h-[280px] md:w-[372px] md:h-[430px]"
               priority
             />
           </motion.div>
 
+          {/* Main Profile */}
           <motion.div
             initial="hidden"
             animate={["visible", "float"]}
             variants={imageAnimationVariants.profile}
           >
             <Image
-              src="/profile_picture.png"
+              src="/images/profile_picture.png"
               alt="Profile Image"
               width={357}
               height={417}
-              className="min-w-[360px] h-[412px] mr-[6px] my-[8px] rounded-xl"
+              className="w-[220px] h-[280px] md:w-[360px] md:h-[412px] rounded-xl"
               priority
             />
           </motion.div>

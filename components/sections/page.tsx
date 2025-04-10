@@ -6,7 +6,7 @@ import { Projects } from "./projects/page";
 
 export default function Layout() {
   return (
-    <div className="flex flex-col gap-40">
+    <div className="flex flex-col gap-10 md:gap-36">
       <HeroSection />
       <Skills />
       <Projects />

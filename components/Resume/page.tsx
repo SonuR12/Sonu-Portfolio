@@ -228,21 +228,21 @@ export function Resume() {
               <ul className="list-disc ml-5 text-gray-700 mt-1 space-y-1 text-sm">
                 <li>
                   <strong>Sonu.Dev – Personal Portfolio:</strong> Sleek,
-                  responsive portfolio built with React, Nextjs, TailwindCSS,
+                  responsive portfolio built with React, Nextjs, TailwindCSS3,
                   Shadcn Ui to showcase skills and projects.
                 </li>
                 <li>
                   <strong>Apple Website Clone:</strong> Pixel-perfect clone of
-                  Apple’s homepage with HTML, CSS, javaScript and Tailwind CSS.
+                  Apple’s homepage with HTML5, CSS3, javaScript and Tailwind CSS3.
                 </li>
                 <li>
                   <strong>Antivirus Product Site:</strong> Freelance modern
-                  responsive site built with HTML, CSS, and JS featuring
+                  responsive site built with HTML5, CSS3, and JS featuring
                   interactive sections and downloads.
                 </li>
                 <li>
                   <strong>Spotify Clone:</strong> Responsive web player layout
-                  replicating Spotify’s UI, built with HTML, CSS, JavaScript.
+                  replicating Spotify’s UI, built with HTML5, CSS3, JavaScript.
                 </li>
                 <li>
                   <strong>Blinkit UI Clone:</strong> E-commerce UI built with
@@ -287,7 +287,7 @@ export function Resume() {
               JWT (JSON Web Token)
             </li>
             <li>
-              <strong>UI Libraries:</strong> ShadCN UI, Tailwind CSS, Bootstrap
+              <strong>UI Libraries:</strong> ShadCN UI, Tailwind CSS3, Bootstrap
             </li>
             <li>
               <strong>Soft Skills:</strong> Teamwork & Collaboration, Debugging

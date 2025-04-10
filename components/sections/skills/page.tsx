@@ -81,14 +81,14 @@ const Skills = () => {
       {/* Background images */}
       <>
         <Image
-          src="/tech_stack_grid_dark.svg"
+          src="/svg/tech_stack_grid_dark.svg"
           alt="Background grid"
           width={569}
           height={373}
           className="hidden dark:md:block z-1 absolute -left-[135px]"
         />
         <Image
-          src="/tech_stack_grid.svg"
+          src="/svg/tech_stack_grid.svg"
           alt="Background grid"
           width={569}
           height={373}

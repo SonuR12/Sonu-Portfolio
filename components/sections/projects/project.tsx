@@ -31,7 +31,6 @@ export const Project = ({
   return (
     <CardContainer className="inter-var -mb-36">
       <CardBody className="group bg-white dark:bg-neutral-900 border border-black/10 dark:border-white/20 rounded-2xl p-5 md:p-[18px] h-fit w-full max-w-[428px] shadow-md hover:shadow-xl transition-all duration-200">
-        
         {/* Thumbnail + Video */}
         <CardItem className="w-full aspect-video relative rounded-xl overflow-hidden">
           {/* Base Thumbnail for all views */}

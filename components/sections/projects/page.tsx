@@ -74,13 +74,15 @@ export const Projects = () => {
         <SectionHeader plainText="👨‍💻 Some of my" highlightText="Best Works" />
 
         {/* Section fade-in */}
-        <motion.div
-          initial={isMobile ? { y: 50, opacity: 0 } : { scale: 0.8, opacity: 0 }}
-          animate={isInView ? { y: 0, scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
+        <div>
           {showProjects && (
-            <div className="lg:w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+            <motion.div 
+            initial={
+              isMobile ? { y: 50, opacity: 0 } : { scale: 0.8, opacity: 0 }
+            }
+            animate={isInView ? { y: 0, scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="lg:w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
               {projects.map((project, idx) => {
                 const delay = idx * 0.3;
                 return (
@@ -96,22 +98,22 @@ export const Projects = () => {
                   </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* Backgrounds */}
       <>
         <Image
-          src="/projects_highlight.svg"
+          src="/svg/projects_highlight.svg"
           alt="Background project"
           width={558}
           height={558}
           className="absolute -z-10 hidden md:block left-1/2 -translate-x-1/2 translate-y-1/2"
         />
         <Image
-          src="/projects_highlight_mobile.svg"
+          src="/svg/projects_highlight_mobile.svg"
           alt="Mobile Background project"
           width={558}
           height={558}
