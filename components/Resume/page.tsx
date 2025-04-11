@@ -13,81 +13,61 @@ import html2canvas from "html2canvas-pro"; // make sure this is installed
 import jsPDF from "jspdf";
 
 export function Resume() {
-  
+
   async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
   
-    // Save original styles
-    const originalOverflow = document.body.style.overflow;
+    // Store original styles
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalDialogWidth = element.style.width;
     const originalMaxHeight = element.style.maxHeight;
     const originalElementOverflow = element.style.overflow;
   
-    // Make body scrollable
+    // Prepare layout for screenshot
     document.body.style.overflow = "visible";
+    element.style.overflow = "visible";
+    element.style.maxHeight = "none";
+    element.style.width = "1000px";
   
-    // Hide the save button
+    // Hide save button
     const saveButton = document.getElementById("save-resume-btn");
     if (saveButton) saveButton.style.display = "none";
   
-    // Allow element to expand fully
-    element.style.overflow = "visible";
-    element.style.maxHeight = "none";
+    await new Promise((res) => setTimeout(res, 100));
   
-    await new Promise((res) => setTimeout(res, 100)); // allow reflow
-  
+    // Take screenshot
     const canvas = await html2canvas(element, {
       allowTaint: true,
       useCORS: true,
-      scale: 2,
+      scale: 1.5, // reduce scale to lower resolution & size (~1.5 is sweet spot)
       backgroundColor: "#ffffff",
+      windowWidth: 1000,
       scrollX: 0,
       scrollY: -window.scrollY,
     });
   
-    const imgData = canvas.toDataURL("image/png");
+    const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
   
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "pt",
-      format: "a4", // Standard A4 PDF
-    });
+    // Convert canvas to mm
+    const pxToMm = (px: number) => px * 0.264583;
+    const imgWidthMm = 210; // A4 width
+    const imgHeightMm = pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
   
-    // Scale to fit A4 width and maintain aspect ratio
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
+    const pdf = new jsPDF("p", "mm", [imgWidthMm, imgHeightMm]);
   
-    const imgWidth = pageWidth;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
-    let position = 0;
-  
-    if (imgHeight <= pageHeight) {
-      // Single-page resume
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-    } else {
-      // Multi-page resume
-      let heightLeft = imgHeight;
-      while (heightLeft > 0) {
-        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-        position -= pageHeight;
-        if (heightLeft > 0) {
-          pdf.addPage();
-        }
-      }
-    }
+    // Add image without any border, margin, or offset
+    pdf.addImage(imgData, "JPEG", 0, 0, imgWidthMm, imgHeightMm, undefined, "FAST");
   
     pdf.save("Sonu_Rai_Resume.pdf");
   
-    // Restore styles
+    // Restore original styles
     if (saveButton) saveButton.style.display = "block";
-    document.body.style.overflow = originalOverflow;
+    document.body.style.overflow = originalBodyOverflow;
+    element.style.width = originalDialogWidth;
     element.style.maxHeight = originalMaxHeight;
     element.style.overflow = originalElementOverflow;
   }
-  
-
   
 
   return (

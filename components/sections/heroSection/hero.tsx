@@ -115,7 +115,7 @@ const Hero = () => {
       </div>
 
       {/* Image Section */}
-      <div className="relative min-w-[300px] md:min-w-[360px] h-[380px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl flex items-center justify-center">
+      <div className="relative min-w-[300px] main-image-div md:min-w-[360px] h-[380px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl flex items-center justify-center">
 
         {/* PROFILE CONTAINER */}
         <div className="relative block w-[220px] h-[280px] md:w-[360px] md:h-[430px] z-10 mr-[6px] my-[8px] rounded-xl">
@@ -131,7 +131,7 @@ const Hero = () => {
               alt="Light Profile"
               width={372}
               height={430}
-              className="w-[220px] h-[280px] md:w-[372px] md:h-[430px]"
+              className="w-[220px] image-div h-[280px] md:w-[372px] md:h-[430px]"
               priority
             />
           </motion.div>
@@ -148,7 +148,7 @@ const Hero = () => {
               alt="Dark Profile"
               width={372}
               height={430}
-              className="w-[220px] h-[280px] md:w-[372px] md:h-[430px]"
+              className="w-[220px] image-div h-[280px] md:w-[372px] md:h-[430px]"
               priority
             />
           </motion.div>
@@ -164,7 +164,7 @@ const Hero = () => {
               alt="Profile Image"
               width={357}
               height={417}
-              className="w-[220px] h-[280px] md:w-[360px] md:h-[412px] rounded-xl"
+              className="w-[220px] image-div h-[280px] md:w-[360px] md:h-[412px] rounded-xl"
               priority
             />
           </motion.div>

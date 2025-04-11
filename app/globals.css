@@ -68,6 +68,7 @@
     @apply bg-background text-foreground;
     color: var(--foreground);
     background-color: var(--background);
+    scroll-behavior: smooth;
   }
 }
 
@@ -157,13 +158,22 @@
   .hero{
     flex-direction: column-reverse;
   }
-  
-}
-@media screen and (max-width: 500px) {
   .leadingsnugtext{
     padding-left: 0;
   }
+
+  .main-image-div{
+    height: 200px;
+    margin-top: 5rem;
+  }
+
+  .image-div{
+    height: 200px;
+    width: 200px;
+  }
+  
 }
+
 
 @media screen and (max-width: 600px) {
   .hero{

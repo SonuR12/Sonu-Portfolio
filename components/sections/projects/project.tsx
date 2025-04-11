@@ -141,7 +141,7 @@ export const Project = ({
         </CardItem>
 
         {/* Title + Link */}
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-4 gap-2">
           <CardItem className="text-xl font-semibold text-neutral-800 dark:text-white">
             {title}
           </CardItem>
