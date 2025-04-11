@@ -66,7 +66,7 @@ src="hero.svg"
 
         {/* Icon 2: Merge (from the top) */}
         <motion.div
-          className="circle-icon absolute z-10 bg-opacity-[12%] hidden sm:flex top-[10px] left-2 sm:-top-124 sm:left-[610px]"
+          className="circle-icon absolute z-10 bg-opacity-[12%] hidden sm:flex top-[10px] left-2 sm:-top-100 md:-top-140 lg:-top-124 xl:-top-128 sm:left-[610px]"
           initial={{ y: -120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
