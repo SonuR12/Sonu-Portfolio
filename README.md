@@ -1,102 +1,36 @@
-# 💼 PERSONAL RESUME WEBSITE
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is a fully responsive and professional personal resume website built using Next.js, TypeScript, Tailwind CSS, and ShadCN UI. It showcases your resume in a beautifully designed layout, with the ability to download it as a high-quality PNG image or a multi-page A4-sized PDF. The project is performance-optimized, accessible, and visually engaging with smooth Framer Motion animations.
+## Getting Started
 
-It’s designed to make a strong first impression — whether you're applying for jobs, showcasing your skills to clients, or sharing your professional story with the world.
+First, run the development server:
 
-# ✨ KEY FEATURES
-
-✅ Responsive Design
-Looks great on mobile phones, tablets, laptops, and desktops — built mobile-first using Tailwind CSS.
-🖼️ Downloadable Resume
-Export your resume in multiple formats:
-PNG Image: Perfect for sharing on platforms like LinkedIn.
-Multi-page PDF: Automatically paginated for A4 dimensions using jsPDF.
-💡 Clean and Minimal UI
-Built using ShadCN UI and Tailwind utilities for a consistent and elegant look.
-⚙️ Modern Tech Stack
-Uses the latest versions of popular frameworks and libraries: Next.js 14+, TypeScript, and React Server Components.
-🎞️ Animations with Framer Motion
-Subtle animations bring your content to life without distracting the reader.
-🌐 Optimized for SEO and Performance
-Fast load times, clean HTML structure, and accessibility-ready.
-
-
-# 🛠️ TECH STACK
-
-TECHNOLOGY	PURPOSE
-Next.js	App framework for server-side rendering and routing
-TypeScript	Static typing for scalable code
-Tailwind CSS	Utility-first styling framework
-ShadCN UI	Headless, themeable UI components
-Framer Motion	Animation library for React
-html2canvas-pro	Captures DOM elements as image
-jsPDF	Generates downloadable PDF files
-📁 PROJECT STRUCTURE
-
-
-![image alt](https://github.com/SonuR12/Sonu-Portfolio/blob/b31953fee613d2081dd5b2dbb968e3b0b553c755/folderStructure.jpg)
-
-
-# 🚀 GETTING STARTED
-
-Follow the steps below to run the project locally:
-
-1. CLONE THE REPOSITORY
-git clone https://github.com/your-username/resume-website.git
-cd resume-website
-2. INSTALL DEPENDENCIES
-npm install
-# or
-yarn install
-3. RUN THE DEVELOPMENT SERVER
+```bash
 npm run dev
 # or
 yarn dev
-Open http://localhost:3000 in your browser to view the site.
+# or
+pnpm dev
+# or
+bun dev
+```
 
-4. BUILD FOR PRODUCTION
-npm run build
-npm run start
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-# 🧠 HOW THE DOWNLOAD FEATURE WORKS
+## Learn More
 
-The download feature leverages two powerful libraries:
+To learn more about Next.js, take a look at the following resources:
 
-html2canvas-pro: Captures a DOM element as a high-resolution canvas.
-jsPDF: Converts the canvas into a PDF format with multi-page A4 support.
-When a user clicks the Download Resume button:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-The modal opens with format options (PNG or PDF).
-The html2canvas-pro captures the resume section.
-The captured image is passed to jsPDF, which handles page-breaking and final file export.
-The file is automatically downloaded to the user’s system.
-This export logic ensures your resume maintains clarity and readability in both formats.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-# 📸 LIVE DEMO & SCREENSHOTS
-
-Coming soon: Live Site Link
-Add preview screenshots or screen recordings here to show off the functionality.
-
-
-
-# 🙏 ACKNOWLEDGEMENTS
-
-This project wouldn’t have been possible without:
-
-Next.js
-ShadCN UI
-Tailwind CSS
-Framer Motion
-html2canvas-pro
-jsPDF
-
-
-# 🔐 LICENSE
-
-This project is licensed under the MIT License. Feel free to fork, customize, and use it for personal or professional projects.
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

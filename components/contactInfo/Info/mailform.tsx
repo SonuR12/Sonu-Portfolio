@@ -1,8 +1,33 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
+import emailjs from 'emailjs-com';
+import { useRef } from 'react';
 
 export default function MailForm() {
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.current) return;
+  
+    emailjs
+      .sendForm(
+        'service_lyp7egs',
+        'template_eishv9t',
+        form.current,
+        'm4pUhpIErQ8mMId_Z'
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          form.current?.reset(); // ✅ Clears all input fields
+        },
+        (error) => alert('Failed to send: ' + error.text)
+      );
+  };
+  
   
   return (
     <motion.div
@@ -22,32 +47,33 @@ export default function MailForm() {
       </div>
 
       {/* Form Fields */}
-      <form className="mt-8 space-y-6 py-2">
+      <form ref={form} onSubmit={sendEmail} className="mt-8 space-y-6 py-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block mb-2 text-sm font-medium">First Name</label>
-            <Input type="text" />
+            <Input  name="name" type="text" required/>
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Last Name</label>
-            <Input type="text" />
+            <Input  name="name" type="text" required />
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium">Phone Number</label>
+          <label className="block mb-2 text-sm font-medium">Phone Number</label>
             <Input
-              type="number"
+              name="number" type="number" required 
               className="appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
             />
           </div>
           <div>
             <label className="block mb-2 text-sm font-medium">Your Email</label>
-            <Input type="email" />
+            <Input name="email" type="email" required />
           </div>
         </div>
 
         <div>
           <label className="block mb-2 text-sm font-medium">Message</label>
           <textarea
+          name="message"
             rows={4}
             className="w-full border-b border-[#2E1065] bg-transparent focus:outline-none focus:border-[#2E1065] resize-none"
             placeholder="Your message..."
