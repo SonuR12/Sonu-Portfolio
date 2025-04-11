@@ -1,10 +1,10 @@
-💼 PERSONAL RESUME WEBSITE
+# 💼 PERSONAL RESUME WEBSITE
 
 This is a fully responsive and professional personal resume website built using Next.js, TypeScript, Tailwind CSS, and ShadCN UI. It showcases your resume in a beautifully designed layout, with the ability to download it as a high-quality PNG image or a multi-page A4-sized PDF. The project is performance-optimized, accessible, and visually engaging with smooth Framer Motion animations.
 
 It’s designed to make a strong first impression — whether you're applying for jobs, showcasing your skills to clients, or sharing your professional story with the world.
 
-✨ KEY FEATURES
+# ✨ KEY FEATURES
 
 ✅ Responsive Design
 Looks great on mobile phones, tablets, laptops, and desktops — built mobile-first using Tailwind CSS.
