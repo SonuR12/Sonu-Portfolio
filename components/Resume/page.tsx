@@ -13,29 +13,28 @@ import html2canvas from "html2canvas-pro"; // make sure this is installed
 import jsPDF from "jspdf";
 
 export function Resume() {
-
   async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
-  
+
     // Store original styles
     const originalBodyOverflow = document.body.style.overflow;
     const originalDialogWidth = element.style.width;
     const originalMaxHeight = element.style.maxHeight;
     const originalElementOverflow = element.style.overflow;
-  
+
     // Prepare layout for screenshot
     document.body.style.overflow = "visible";
     element.style.overflow = "visible";
     element.style.maxHeight = "none";
     element.style.width = "1000px";
-  
+
     // Hide save button
     const saveButton = document.getElementById("save-resume-btn");
     if (saveButton) saveButton.style.display = "none";
-  
+
     await new Promise((res) => setTimeout(res, 100));
-  
+
     // Take screenshot
     const canvas = await html2canvas(element, {
       allowTaint: true,
@@ -46,21 +45,31 @@ export function Resume() {
       scrollX: 0,
       scrollY: -window.scrollY,
     });
-  
+
     const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
-  
+
     // Convert canvas to mm
     const pxToMm = (px: number) => px * 0.264583;
     const imgWidthMm = 210; // A4 width
-    const imgHeightMm = pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
-  
+    const imgHeightMm =
+      pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
+
     const pdf = new jsPDF("p", "mm", [imgWidthMm, imgHeightMm]);
-  
+
     // Add image without any border, margin, or offset
-    pdf.addImage(imgData, "JPEG", 0, 0, imgWidthMm, imgHeightMm, undefined, "FAST");
-  
+    pdf.addImage(
+      imgData,
+      "JPEG",
+      0,
+      0,
+      imgWidthMm,
+      imgHeightMm,
+      undefined,
+      "FAST"
+    );
+
     pdf.save("Sonu_Rai_Resume.pdf");
-  
+
     // Restore original styles
     if (saveButton) saveButton.style.display = "block";
     document.body.style.overflow = originalBodyOverflow;
@@ -68,7 +77,6 @@ export function Resume() {
     element.style.maxHeight = originalMaxHeight;
     element.style.overflow = originalElementOverflow;
   }
-  
 
   return (
     <Dialog>
@@ -368,6 +376,52 @@ export function Resume() {
               </ul>
             </div>
           </div>
+        </section>
+
+        {/* Section: Certificates */}
+        <section className="mt-6">
+          <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
+            Certificates
+          </h3>
+          <ul className="mt-2 space-y-3 text-sm text-gray-700">
+            <li>
+              <p className="font-semibold">Generative AI</p>
+              <p>Google · Issued Apr 2025</p>
+              <p>Credential ID: 14653895</p>
+              <Link
+                href="https://www.cloudskillsboost.google/public_profiles/4edab095-7ec9-4656-9d28-5680d69ff678/badges/14653895?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                target="_blank"
+                className="text-indigo-500 hover:underline"
+              >
+                Show credential
+              </Link>
+            </li>
+            <li>
+              <p className="font-semibold">
+                Set Up an App Dev Environment on Google Cloud (Skill Badge)
+              </p>
+              <p>Google · Issued Apr 2025</p>
+              <Link
+                href="https://www.credly.com/badges/a2e7efd7-ef52-4c7d-8a9a-b98d050979cf/linked_in_profile"
+                target="_blank"
+                className="text-indigo-500 hover:underline"
+              >
+                Show credential
+              </Link>
+            </li>
+            <li>
+              <p className="font-semibold">Skill Boost Arcade Base Camp</p>
+              <p>Google · Issued Apr 2025</p>
+              <p>Credential ID: 14547654</p>
+              <Link
+                href="https://www.cloudskillsboost.google/public_profiles/4edab095-7ec9-4656-9d28-5680d69ff678/badges/14547654?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                target="_blank"
+                className="text-indigo-500 hover:underline"
+              >
+                Show credential
+              </Link>
+            </li>
+          </ul>
         </section>
 
         {/* Section: Work References */}
