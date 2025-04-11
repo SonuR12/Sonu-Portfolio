@@ -22,7 +22,7 @@ Subtle animations bring your content to life without distracting the reader.
 Fast load times, clean HTML structure, and accessibility-ready.
 
 
-#🛠️ TECH STACK
+# 🛠️ TECH STACK
 
 TECHNOLOGY	PURPOSE
 Next.js	App framework for server-side rendering and routing
@@ -61,7 +61,7 @@ npm run start
 
 
 
-#🧠 HOW THE DOWNLOAD FEATURE WORKS
+# 🧠 HOW THE DOWNLOAD FEATURE WORKS
 
 The download feature leverages two powerful libraries:
 
@@ -77,14 +77,14 @@ This export logic ensures your resume maintains clarity and readability in both 
 
 
 
-#📸 LIVE DEMO & SCREENSHOTS
+# 📸 LIVE DEMO & SCREENSHOTS
 
 Coming soon: Live Site Link
 Add preview screenshots or screen recordings here to show off the functionality.
 
 
 
-#🙏 ACKNOWLEDGEMENTS
+# 🙏 ACKNOWLEDGEMENTS
 
 This project wouldn’t have been possible without:
 
@@ -96,7 +96,7 @@ html2canvas-pro
 jsPDF
 
 
-#🔐 LICENSE
+# 🔐 LICENSE
 
 This project is licensed under the MIT License. Feel free to fork, customize, and use it for personal or professional projects.
 
