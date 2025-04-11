@@ -32,26 +32,11 @@ html2canvas-pro	Captures DOM elements as image
 jsPDF	Generates downloadable PDF files
 📁 PROJECT STRUCTURE
 
-resume-website/
-│
-├── app/
-│   ├── resume/
-│   │   ├── ResumeCard.tsx         # Resume sections (Experience, Skills, etc.)
-│   │   └── ResumeDownload.tsx     # Download modal with PNG/PDF export logic
-│   ├── layout.tsx                 # Shared layout across pages
-│   └── page.tsx                   # Landing page for the resume
-│
-├── public/
-│   └── assets/                    # Static files like logos and images
-│
-├── styles/
-│   └── globals.css                # Custom global styles
-│
-├── tsconfig.json
-├── tailwind.config.ts
-├── package.json
-└── README.md                     # You are here!
-🚀 GETTING STARTED
+
+![image alt](https://github.com/SonuR12/Sonu-Portfolio/blob/b31953fee613d2081dd5b2dbb968e3b0b553c755/folderStructure.jpg)
+
+
+# 🚀 GETTING STARTED
 
 Follow the steps below to run the project locally:
 
