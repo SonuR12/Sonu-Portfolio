@@ -9,8 +9,87 @@ import {
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import Link from "next/link";
+import html2canvas from "html2canvas-pro"; // make sure this is installed
+import jsPDF from "jspdf";
 
 export function Resume() {
+  
+  async function Save() {
+    const element = document.getElementById("resume");
+    if (!element) return;
+  
+    // Save original styles
+    const originalOverflow = document.body.style.overflow;
+    const originalMaxHeight = element.style.maxHeight;
+    const originalElementOverflow = element.style.overflow;
+  
+    // Make body scrollable
+    document.body.style.overflow = "visible";
+  
+    // Hide the save button
+    const saveButton = document.getElementById("save-resume-btn");
+    if (saveButton) saveButton.style.display = "none";
+  
+    // Allow element to expand fully
+    element.style.overflow = "visible";
+    element.style.maxHeight = "none";
+  
+    await new Promise((res) => setTimeout(res, 100)); // allow reflow
+  
+    const canvas = await html2canvas(element, {
+      allowTaint: true,
+      useCORS: true,
+      scale: 2,
+      backgroundColor: "#ffffff",
+      scrollX: 0,
+      scrollY: -window.scrollY,
+    });
+  
+    const imgData = canvas.toDataURL("image/png");
+  
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "pt",
+      format: "a4", // Standard A4 PDF
+    });
+  
+    // Scale to fit A4 width and maintain aspect ratio
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+  
+    const imgWidth = pageWidth;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  
+    let position = 0;
+  
+    if (imgHeight <= pageHeight) {
+      // Single-page resume
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+    } else {
+      // Multi-page resume
+      let heightLeft = imgHeight;
+      while (heightLeft > 0) {
+        pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+        position -= pageHeight;
+        if (heightLeft > 0) {
+          pdf.addPage();
+        }
+      }
+    }
+  
+    pdf.save("Sonu_Rai_Resume.pdf");
+  
+    // Restore styles
+    if (saveButton) saveButton.style.display = "block";
+    document.body.style.overflow = originalOverflow;
+    element.style.maxHeight = originalMaxHeight;
+    element.style.overflow = originalElementOverflow;
+  }
+  
+
+  
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -23,7 +102,10 @@ export function Resume() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="sm:max-w-[800px] z-[1000] max-h-[90vh] overflow-y-auto bg-white text-gray-900 rounded-xl shadow-xl px-6 py-6">
+      <DialogContent
+        id="resume"
+        className="sm:max-w-[800px] z-[1000] max-h-[90vh] overflow-y-auto bg-white text-gray-900 rounded-xl shadow-xl px-6 py-6"
+      >
         {/* Required for accessibility */}
         <DialogHeader>
           <DialogTitle className="hidden">Sonu Rai Resume</DialogTitle>
@@ -56,7 +138,12 @@ export function Resume() {
               </p>
               <p className="flex">
                 {/* mail */}
-                <Image height={20} width={20} src="/svg/gmail.svg" alt="Gmail" />
+                <Image
+                  height={20}
+                  width={20}
+                  src="/svg/gmail.svg"
+                  alt="Gmail"
+                />
                 &nbsp;
                 <Link
                   target="_blank"
@@ -83,7 +170,12 @@ export function Resume() {
                 </Link>
               </p>
               <p className="flex">
-                <Image height={20} width={20} src="/svg/github.svg" alt="Github" />
+                <Image
+                  height={20}
+                  width={20}
+                  src="/svg/github.svg"
+                  alt="Github"
+                />
                 &nbsp;
                 <Link
                   target="_blank"
@@ -136,6 +228,43 @@ export function Resume() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Section: Core Skills */}
+        <section className="mt-6">
+          <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
+            Core Skills
+          </h3>
+          <ul className="list-disc ml-6 mt-2 text-sm text-gray-700 space-y-1">
+            <li>
+              <strong>Languages:</strong> Java, TypeScript, JavaScript, Dart
+            </li>
+            <li>
+              <strong>Backend & Scripting:</strong> Node.js, PHP, Mongoose,
+              Prisma (ORM)
+            </li>
+            <li>
+              <strong>Databases:</strong> MongoDB, MySQL
+            </li>
+            <li>
+              <strong>API & Communication:</strong> REST APIs
+            </li>
+            <li>
+              <strong>Frameworks:</strong> Next.js (Web), React.js, Flutter
+              (Mobile + Web)
+            </li>
+            <li>
+              <strong>Authentication:</strong> NextAuth, Clerk, Firebase Auth,
+              JWT (JSON Web Token)
+            </li>
+            <li>
+              <strong>UI Libraries:</strong> ShadCN UI, Tailwind CSS3, Bootstrap
+            </li>
+            <li>
+              <strong>Soft Skills:</strong> Teamwork & Collaboration, Debugging
+              & Problem Solving, Clean Code Practices
+            </li>
+          </ul>
         </section>
 
         {/* Section: Career History */}
@@ -234,7 +363,8 @@ export function Resume() {
                 </li>
                 <li>
                   <strong>Apple Website Clone:</strong> Pixel-perfect clone of
-                  Apple’s homepage with HTML5, CSS3, javaScript and Tailwind CSS3.
+                  Apple’s homepage with HTML5, CSS3, javaScript and Tailwind
+                  CSS3.
                 </li>
                 <li>
                   <strong>Antivirus Product Site:</strong> Freelance modern
@@ -258,43 +388,6 @@ export function Resume() {
               </ul>
             </div>
           </div>
-        </section>
-
-        {/* Section: Core Skills */}
-        <section className="mt-6">
-          <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
-            Core Skills
-          </h3>
-          <ul className="list-disc ml-6 mt-2 text-sm text-gray-700 space-y-1">
-            <li>
-              <strong>Languages:</strong> Java, TypeScript, JavaScript, Dart
-            </li>
-            <li>
-              <strong>Backend & Scripting:</strong> Node.js, PHP, Mongoose,
-              Prisma (ORM)
-            </li>
-            <li>
-              <strong>Databases:</strong> MongoDB, MySQL
-            </li>
-            <li>
-              <strong>API & Communication:</strong> REST APIs
-            </li>
-            <li>
-              <strong>Frameworks:</strong> Next.js (Web), React.js, Flutter
-              (Mobile + Web)
-            </li>
-            <li>
-              <strong>Authentication:</strong> NextAuth, Clerk, Firebase Auth,
-              JWT (JSON Web Token)
-            </li>
-            <li>
-              <strong>UI Libraries:</strong> ShadCN UI, Tailwind CSS3, Bootstrap
-            </li>
-            <li>
-              <strong>Soft Skills:</strong> Teamwork & Collaboration, Debugging
-              & Problem Solving, Clean Code Practices
-            </li>
-          </ul>
         </section>
 
         {/* Section: Work References */}
@@ -333,8 +426,9 @@ export function Resume() {
         {/* Footer */}
         <DialogFooter className="mt-6 justify-end">
           <Button
-            disabled
-            className="text-white bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-110 hover:bg-gray-700 mt-6"
+            id="save-resume-btn"
+            onClick={Save}
+            className="text-white bg-gradient-to-br from-[#6748FF] via-[#5a3ee0] to-[#4c32c7] hover:brightness-120 cursor-pointer mt-6"
           >
             Save Resume
           </Button>

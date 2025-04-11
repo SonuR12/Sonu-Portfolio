@@ -59,7 +59,7 @@ const Hero = () => {
       {/* Text Section */}
       <div className="flex flex-col gap-[13px] items-center md:gap-[34px] md:my-[58px] md:items-start pl-10 sm:pl-0 leadingsnugtext">
         <motion.h1
-          className="text-center md:text-left text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug lg:w-[470px]"
+          className="text-center md:text-left text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug lg:w-[480px]"
           initial="hidden"
           animate="visible"
           custom={0}
