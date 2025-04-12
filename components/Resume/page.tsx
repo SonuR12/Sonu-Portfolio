@@ -28,34 +28,42 @@ const {
 } = userData;
 
 export function Resume() {
-  
   async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
-
+  
     // Store original styles
     const originalBodyOverflow = document.body.style.overflow;
     const originalDialogWidth = element.style.width;
     const originalMaxHeight = element.style.maxHeight;
     const originalElementOverflow = element.style.overflow;
-
+  
     // Prepare layout for screenshot
     document.body.style.overflow = "visible";
     element.style.overflow = "visible";
     element.style.maxHeight = "none";
     element.style.width = "1440px"; // Adjust width as needed
-
+  
     // Hide save button
     const saveButton = document.getElementById("save-resume-btn");
     const closeButton = document.getElementById("resume-close-btn");
-    const link = document.querySelectorAll("#link") as NodeListOf<HTMLElement>;;
+    const link = document.querySelectorAll("#link") as NodeListOf<HTMLElement>;
     if (saveButton) saveButton.style.display = "none";
     if (closeButton) closeButton.style.display = "none";
     link.forEach((link) => (link.style.display = "none"));
-
+  
     await new Promise((res) => setTimeout(res, 100));
-
+  
+    // Check if the browser is Safari
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  
     try {
+      // If it's Safari, show an error and stop the process
+      if (isSafari) {
+        alert("PDF download may not work in Safari. Please use a different browser.");
+        return;
+      }
+  
       // Take screenshot
       const canvas = await html2canvas(element, {
         allowTaint: true,
@@ -66,17 +74,17 @@ export function Resume() {
         scrollX: 0,
         scrollY: -window.scrollY,
       });
-
+  
       const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
-
+  
       // Convert canvas to mm
-      const pxToMm = (px : number) => px * 0.264583;
+      const pxToMm = (px: number) => px * 0.264583;
       const imgWidthMm = 210; // A4 width
       const imgHeightMm =
         pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
-
+  
       const pdf = new jsPDF("p", "mm", [imgWidthMm, imgHeightMm]);
-
+  
       // Add image without any border, margin, or offset
       pdf.addImage(
         imgData,
@@ -88,8 +96,16 @@ export function Resume() {
         undefined,
         "FAST"
       );
-
+  
+      // Attempt to save the PDF
       pdf.save("Sonu_Rai_Resume.pdf");
+  
+      // Check if the file was downloaded successfully (in some cases, you can check after a timeout)
+      setTimeout(() => {
+        if (!pdf) {
+          alert("An error occurred while generating the PDF. Please try again.");
+        }
+      }, 3000); // 3 seconds after attempting download
     } catch (error) {
       console.error("Error generating PDF:", error);
       alert("An error occurred while generating the PDF. Please try again.");
@@ -104,6 +120,8 @@ export function Resume() {
       element.style.overflow = originalElementOverflow;
     }
   }
+  
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -137,7 +155,7 @@ export function Resume() {
         {/* Header with photo, name, role and contact */}
         <div className="flex flex-col sm:flex-row items-center self-start justify-between gap-6 border-b pb-6 w-full">
           <Image
-           crossOrigin="anonymous"
+            crossOrigin="anonymous"
             src="/images/profile_picture.png"
             alt="Profile"
             width={120}
