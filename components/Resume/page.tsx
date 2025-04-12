@@ -49,21 +49,23 @@ type CertificatesType = {
 };
 type RecentWorksType = { name: string; href: string };
 
-type ResumeType = {
-  info: InfoType[];
-  contact: ContactType[];
-  location: LocationType[];
-  ProfessionalSummary: ProfessionalSummaryType[];
-  AcademicBackground: AcademicBackgroundType[];
-  CoreSkills: CoreSkillsType[];
-  Projects: ProjectsType[];
-  OtherProjects: OtherProjectsType[];
-  Certificates: CertificatesType[];
-  RecentWorks: RecentWorksType[];
+type ResumeProps = {
+  data: {
+    info: InfoType[];
+    contact: ContactType[];
+    location: LocationType[];
+    ProfessionalSummary: ProfessionalSummaryType[];
+    AcademicBackground: AcademicBackgroundType[];
+    CoreSkills: CoreSkillsType[];
+    Projects: ProjectsType[];
+    OtherProjects: OtherProjectsType[];
+    Certificates: CertificatesType[];
+    RecentWorks: RecentWorksType[];
+  };
 };
 
 
-export function Resume() {
+export function Resume({ data }: ResumeProps) {
 
    async function Save() {
     const element = document.getElementById("resume");
