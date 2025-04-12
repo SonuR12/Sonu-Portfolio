@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { SectionContainer } from "../SectionContainer";
 import { SectionHeader } from "../SectionHeader";
-import Image from "next/image";
 import rawProjects from "@/data/projects.json" assert { type: "json" };
 import { Project } from "./project";
 import { motion, useInView } from "framer-motion";

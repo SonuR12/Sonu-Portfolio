@@ -97,7 +97,9 @@ const Hero = () => {
              md:text-xl/6 transition-all shadow-lg hover:brightness-110"
             >
               Let&apos;s connect
-              <img
+              <Image
+                width={20}
+                height={20}
                 src="/svg/arrow_right_icon.svg"
                 alt="Arrow right"
                 className="transition-transform duration-300 group-hover:translate-x-1"
