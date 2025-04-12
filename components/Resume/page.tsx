@@ -62,9 +62,6 @@ type ResumeType = {
   RecentWorks: RecentWorksType[];
 };
 
-type ResumeProps = {
-  userData: ResumeType;
-};
 
 export function Resume() {
 
