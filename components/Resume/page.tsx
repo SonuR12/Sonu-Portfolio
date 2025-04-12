@@ -69,7 +69,7 @@ export function Resume() {
       const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
 
       // Convert canvas to mm
-      const pxToMm = (px:any) => px * 0.264583;
+      const pxToMm = (px) => px * 0.264583;
       const imgWidthMm = 210; // A4 width
       const imgHeightMm =
         pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
