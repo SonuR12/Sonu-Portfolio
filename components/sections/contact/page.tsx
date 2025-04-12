@@ -8,15 +8,14 @@ import { motion } from "framer-motion";
 
 export const Contact = () => {
   return (
-    <div className="mx-4 sm:mx-10 md:mx-16 mt-20 mb-5 sm:my-20 md:mt-0 md:mb-10 flex items-center flex-col gap-20">
+    <div id="contact" className="mx-4 sm:mx-10 md:mx-16 mt-20 my-5 sm:my-20 md:mt-0 md:mb-10 flex items-center flex-col gap-20">
       <SectionHeader
         className="!px-10 !text-center mx-10 md:mx-16"
-        plainText="📬 Get in touch with"
-        highlightText="Contact Information"
+        plainText=""
+        highlightText="📬 Contact Information"
       />
 
       <motion.div
-        id="contact"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}

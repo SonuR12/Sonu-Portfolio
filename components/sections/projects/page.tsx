@@ -70,8 +70,8 @@ export const Projects = () => {
 
   return (
     <SectionContainer id="projects">
-      <div className="section-contents mx-6 md:mx-[64px]" ref={ref}>
-        <SectionHeader plainText="👨‍💻 Some of my" highlightText="Best Works" />
+      <div className="section-contents gap-0 my-5 mx-6 md:mx-[64px]" ref={ref}>
+        <SectionHeader plainText="" highlightText="👷‍♂️ Best Works" />
 
         {/* Section fade-in */}
         <div>
@@ -104,7 +104,7 @@ export const Projects = () => {
       </div>
 
       {/* Backgrounds */}
-      <>
+      {/* <>
         <Image
           src="/svg/projects_highlight.svg"
           alt="Background project"
@@ -119,7 +119,8 @@ export const Projects = () => {
           height={558}
           className="absolute -z-10 md:hidden left-1/2 -translate-x-1/2 translate-y-1/2"
         />
-      </>
+        
+      </> */}
     </SectionContainer>
   );
 };

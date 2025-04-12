@@ -43,7 +43,7 @@ export const Project = ({
 
   return (
     <CardContainer className="inter-var -mb-36">
-      <CardBody className="group bg-white dark:bg-neutral-900 border border-black/10 dark:border-white/20 rounded-2xl p-5 md:p-[18px] h-fit w-full max-w-[428px] shadow-md hover:shadow-xl transition-all duration-200">
+      <CardBody className="group bg-white dark:bg-neutral-900 border border-black/10 dark:border-white/20 rounded-2xl p-4 md:p-[15px] h-fit w-full max-w-[428px] shadow-md hover:shadow-xl transition-all duration-200">
         {/* Thumbnail + Video */}
         <CardItem className="w-full aspect-video relative rounded-xl overflow-hidden">
           {/* Base Thumbnail for all views */}
@@ -189,6 +189,22 @@ export const Project = ({
           ))}
         </CardItem>
       </CardBody>
+      <>
+              <Image
+                src="/svg/projects_highlight.svg"
+                alt="Background project"
+                width={558}
+                height={558}
+                className="absolute -z-10 hidden md:block left-1/2 -translate-x-1/2 translate-y-1/2"
+              />
+              <Image
+                src="/svg/projects_highlight_mobile.svg"
+                alt="Mobile Background project"
+                width={558}
+                height={558}
+                className="absolute -z-10 md:hidden left-1/2 -translate-x-1/2 translate-y-1/2"
+              />
+            </>
     </CardContainer>
   );
 };
