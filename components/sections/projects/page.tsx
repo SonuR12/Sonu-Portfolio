@@ -68,12 +68,12 @@ export const Projects = () => {
   };
 
   return (
-    <SectionContainer id="projects">
+    <SectionContainer id="">
       <div className="section-contents gap-0 my-5 mx-6 md:mx-[64px]" ref={ref}>
-        <SectionHeader plainText="" highlightText="👷‍♂️ Best Works" />
+        <SectionHeader className="px-16 py-2" plainText="" highlightText="👷‍♂️ Best Works" />
 
         {/* Section fade-in */}
-        <div>
+        <div id="projects">
           {showProjects && (
             <motion.div 
             initial={

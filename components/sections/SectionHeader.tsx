@@ -8,7 +8,7 @@ interface Props {
 
 export const SectionHeader: React.FC<Props> = ({ plainText, highlightText, className }) => {
     return (
-        <h2 className={`text-[22px] md:text-[35px] px-20 py-2 text-center ${className}`}>
+        <h2 className={`text-[22px] md:text-[35px] text-center ${className}`}>
             {plainText}{""} <span className='highlight px-4 ml-1 whitespace-nowrap'>{highlightText}</span>
         </h2>
     );
