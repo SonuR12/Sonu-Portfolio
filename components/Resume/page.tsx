@@ -15,57 +15,7 @@ import userData from "@/data/user.json";
 
 const { info, contact, location, ProfessionalSummary, AcademicBackground, CoreSkills, Projects, OtherProjects, Certificates, RecentWorks, } = userData;
 
-type InfoType = {
-  name: string;
-  role: string;
-};
-type ContactType = {
-  name: string;
-  image: string;
-  href: string;
-};
-type LocationType = { city: string; country: string };
-type ProfessionalSummaryType = { description: string };
-type AcademicBackgroundType = {
-  name: string;
-  education: string;
-  grade: string;
-  describe: string;
-};
-type CoreSkillsType = { type: string; learn: string };
-type ProjectsType = {
-  title: string;
-  tech: string;
-  description: string;
-  description2: string;
-  link: { name: string; href: string }[];
-};
-type OtherProjectsType = { name: string; description: string };
-type CertificatesType = {
-  name: string;
-  issue: string;
-  id: string;
-  href: string;
-};
-type RecentWorksType = { name: string; href: string };
-
-type ResumeProps = {
-  data: {
-    info: InfoType[];
-    contact: ContactType[];
-    location: LocationType[];
-    ProfessionalSummary: ProfessionalSummaryType[];
-    AcademicBackground: AcademicBackgroundType[];
-    CoreSkills: CoreSkillsType[];
-    Projects: ProjectsType[];
-    OtherProjects: OtherProjectsType[];
-    Certificates: CertificatesType[];
-    RecentWorks: RecentWorksType[];
-  };
-};
-
-
-export function Resume({ data }: ResumeProps) {
+export function Resume() {
 
    async function Save() {
     const element = document.getElementById("resume");
