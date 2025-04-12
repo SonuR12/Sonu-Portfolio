@@ -15,10 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <html lang="en">
-    <body className={`${inter.className} antialiased dark`}>
-      {children}
-    </body>
-  </html>  
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#6748FF" />
+        {/* Add any other custom meta or links here */}
+      </head>
+      <body className={`${inter.className} antialiased dark`}>
+        {children}
+      </body>
+    </html>
   );
 }

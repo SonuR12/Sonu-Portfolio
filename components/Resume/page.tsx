@@ -28,6 +28,7 @@ const {
 } = userData;
 
 export function Resume() {
+  
   async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
@@ -59,7 +60,7 @@ export function Resume() {
       const canvas = await html2canvas(element, {
         allowTaint: true,
         useCORS: true,
-        scale: 3, // Increase scale for better resolution
+        scale: 4, // Increase scale for better resolution
         backgroundColor: "#ffffff",
         windowWidth: 1440, // Adjust window width as needed
         scrollX: 0,
@@ -69,7 +70,7 @@ export function Resume() {
       const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
 
       // Convert canvas to mm
-      const pxToMm = (px) => px * 0.264583;
+      const pxToMm = (px : number) => px * 0.264583;
       const imgWidthMm = 210; // A4 width
       const imgHeightMm =
         pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
@@ -136,6 +137,7 @@ export function Resume() {
         {/* Header with photo, name, role and contact */}
         <div className="flex flex-col sm:flex-row items-center self-start justify-between gap-6 border-b pb-6 w-full">
           <Image
+           crossOrigin="anonymous"
             src="/images/profile_picture.png"
             alt="Profile"
             width={120}
