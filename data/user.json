@@ -28,7 +28,7 @@
 
   "ProfessionalSummary": [
     {
-      "description": "Passionate and detail-oriented Full Stack Developer with strong expertise in JavaScript, TypeScript, Flutter, and scalable web technologies like Next.js, MongoDB, and Prisma. Committed to building clean, performant, and accessible apps."
+      "description": "Passionate and detail-oriented Full Stack Developer with strong expertise in JavaScript, TypeScript, Flutter, and scalable web technologies like Next.js, MongoDB, and Prisma. Committed to building clean, performant, and accessible apps. Experienced in designing and developing full-fledged applications from concept to deployment, with a focus on intuitive UI/UX, API integrations, and responsive design. Skilled in both frontend and backend development, delivering end-to-end solutions that are secure, maintainable, and optimized for performance. Driven by a continuous learning mindset, actively staying updated with the latest trends in web and mobile development. Proven ability to collaborate in agile environments, communicate effectively across teams, and adapt to dynamic project needs. Passionate about turning ideas into digital reality through code."
     }
   ],
 
@@ -153,11 +153,13 @@
 
   "RecentWorks": [
     {
-      "name": "Mentor Mind",
+      "site": "Mentor Mind",
+      "name":"AI Mentor Assistant",
       "href": "https://mentor-mind-app.vercel.app"
     },
     {
-      "name": "Ecommerce Website",
+      "site": "Ecommerce Website",
+      "name":"Maharani",
       "href": "https://maharani-blush.vercel.app"
     }
   ]

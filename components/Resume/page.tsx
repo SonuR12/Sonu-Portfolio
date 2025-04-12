@@ -12,12 +12,23 @@ import Link from "next/link";
 import html2canvas from "html2canvas-pro";
 import jsPDF from "jspdf";
 import userData from "@/data/user.json";
+import { DialogClose } from "@radix-ui/react-dialog";
 
-const { info, contact, location, ProfessionalSummary, AcademicBackground, CoreSkills, Projects, OtherProjects, Certificates, RecentWorks, } = userData;
+const {
+  info,
+  contact,
+  location,
+  ProfessionalSummary,
+  AcademicBackground,
+  CoreSkills,
+  Projects,
+  OtherProjects,
+  Certificates,
+  RecentWorks,
+} = userData;
 
 export function Resume() {
-
-   async function Save() {
+  async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
 
@@ -31,58 +42,67 @@ export function Resume() {
     document.body.style.overflow = "visible";
     element.style.overflow = "visible";
     element.style.maxHeight = "none";
-    element.style.width = "1440px";
+    element.style.width = "1440px"; // Adjust width as needed
 
     // Hide save button
     const saveButton = document.getElementById("save-resume-btn");
+    const closeButton = document.getElementById("resume-close-btn");
+    const link = document.querySelectorAll("#link") as NodeListOf<HTMLElement>;;
     if (saveButton) saveButton.style.display = "none";
+    if (closeButton) closeButton.style.display = "none";
+    link.forEach((link) => (link.style.display = "none"));
 
     await new Promise((res) => setTimeout(res, 100));
 
-    // Take screenshot
-    const canvas = await html2canvas(element, {
-      allowTaint: true,
-      useCORS: true,
-      scale: 2.8,
-      backgroundColor: "#ffffff",
-      windowWidth: 1000,
-      scrollX: 0,
-      scrollY: -window.scrollY,
-    });
+    try {
+      // Take screenshot
+      const canvas = await html2canvas(element, {
+        allowTaint: true,
+        useCORS: true,
+        scale: 3, // Increase scale for better resolution
+        backgroundColor: "#ffffff",
+        windowWidth: 1440, // Adjust window width as needed
+        scrollX: 0,
+        scrollY: -window.scrollY,
+      });
 
-    const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
+      const imgData = canvas.toDataURL("image/jpeg", 0.7); // JPEG format + 70% quality
 
-    // Convert canvas to mm
-    const pxToMm = (px: number) => px * 0.264583;
-    const imgWidthMm = 210; // A4 width
-    const imgHeightMm =
-      pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
+      // Convert canvas to mm
+      const pxToMm = (px:any) => px * 0.264583;
+      const imgWidthMm = 210; // A4 width
+      const imgHeightMm =
+        pxToMm(canvas.height) * (imgWidthMm / pxToMm(canvas.width));
 
-    const pdf = new jsPDF("p", "mm", [imgWidthMm, imgHeightMm]);
+      const pdf = new jsPDF("p", "mm", [imgWidthMm, imgHeightMm]);
 
-    // Add image without any border, margin, or offset
-    pdf.addImage(
-      imgData,
-      "JPEG",
-      0,
-      0,
-      imgWidthMm,
-      imgHeightMm,
-      undefined,
-      "FAST"
-    );
+      // Add image without any border, margin, or offset
+      pdf.addImage(
+        imgData,
+        "JPEG",
+        0,
+        0,
+        imgWidthMm,
+        imgHeightMm,
+        undefined,
+        "FAST"
+      );
 
-    pdf.save("Sonu_Rai_Resume.pdf");
-
-    // Restore original styles
-    if (saveButton) saveButton.style.display = "block";
-    document.body.style.overflow = originalBodyOverflow;
-    element.style.width = originalDialogWidth;
-    element.style.maxHeight = originalMaxHeight;
-    element.style.overflow = originalElementOverflow;
+      pdf.save("Sonu_Rai_Resume.pdf");
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("An error occurred while generating the PDF. Please try again.");
+    } finally {
+      // Restore original styles
+      if (saveButton) saveButton.style.display = "block";
+      if (closeButton) closeButton.style.display = "block";
+      link.forEach((link) => (link.style.display = "block"));
+      document.body.style.overflow = originalBodyOverflow;
+      element.style.width = originalDialogWidth;
+      element.style.maxHeight = originalMaxHeight;
+      element.style.overflow = originalElementOverflow;
+    }
   }
-  
-  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -102,6 +122,15 @@ export function Resume() {
         {/* Required for accessibility */}
         <DialogHeader>
           <DialogTitle className="hidden">Sonu Rai Resume</DialogTitle>
+          <DialogClose id="resume-close-btn">
+            <Image
+              src="/images/close.png"
+              alt="Close"
+              width={10}
+              height={10}
+              className="absolute top-4 right-4 cursor-pointer hover:opacity-80 border hover:border-black p-1 w-5 rounded-sm"
+            />
+          </DialogClose>
         </DialogHeader>
 
         {/* Header with photo, name, role and contact */}
@@ -223,7 +252,8 @@ export function Resume() {
                   <div className="font-semibold">{item.title}</div>
                   <div className="text-gray-600">
                     <span className="font-semibold">Tech - </span>
-                     {item.tech}</div>
+                    {item.tech}
+                  </div>
                   <p className="mt-1 text-gray-700 leading-relaxed">
                     {item.description}
                     {item.link && item.link.length > 0 && (
@@ -284,12 +314,16 @@ export function Resume() {
           </h3>
           {Certificates.map((item, index) => {
             return (
-              <ul key={index} className="mt-2 ml-3 space-y-3 text-sm text-gray-700">
+              <ul
+                key={index}
+                className="mt-2 ml-3 space-y-3 text-sm text-gray-700"
+              >
                 <li>
                   <div className="font-semibold">{item.name}</div>
                   <div>{item.issue}</div>
-                  <div>Credential ID: {item.id}</div>
+                  {item.id && <div>Credential ID: {item.id}</div>}
                   <Link
+                    id="link"
                     href={item.href}
                     target="_blank"
                     className="text-indigo-500 hover:underline"
@@ -308,24 +342,27 @@ export function Resume() {
             Recent Works
           </h3>
 
-          {RecentWorks.map((item, index) => {
-            return (
-              <div key={index} className="mt-2 ml-3 text-sm text-gray-700 space-y-1">
-                <div>
-                  {item.name} (
-                  <Link
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-500 hover:text-indigo-700 hover:underline"
-                  >
-                    Maharani
-                  </Link>
-                  )
+          <div className="mt-2 ml-3 text-sm text-gray-700">
+            {RecentWorks.map((item, index) => {
+              return (
+                <div key={index} className="flex gap-1">
+                  {item.site}{" "}
+                  <div id="link">
+                    (
+                    <Link
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-indigo-500 hover:text-indigo-700 hover:underline"
+                    >
+                      {item.name}
+                    </Link>
+                    )
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </section>
 
         {/* Footer */}
