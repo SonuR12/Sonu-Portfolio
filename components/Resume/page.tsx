@@ -9,11 +9,66 @@ import {
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import Link from "next/link";
-import html2canvas from "html2canvas-pro"; // make sure this is installed
+import html2canvas from "html2canvas-pro";
 import jsPDF from "jspdf";
+import userData from "@/data/user.json";
+
+const { info, contact, location, ProfessionalSummary, AcademicBackground, CoreSkills, Projects, OtherProjects, Certificates, RecentWorks, } = userData;
+
+type InfoType = {
+  name: string;
+  role: string;
+};
+type ContactType = {
+  name: string;
+  image: string;
+  href: string;
+};
+type LocationType = { city: string; country: string };
+type ProfessionalSummaryType = { description: string };
+type AcademicBackgroundType = {
+  name: string;
+  education: string;
+  grade: string;
+  describe: string;
+};
+type CoreSkillsType = { type: string; learn: string };
+type ProjectsType = {
+  title: string;
+  tech: string;
+  description: string;
+  description2: string;
+  link: { name: string; href: string }[];
+};
+type OtherProjectsType = { name: string; description: string };
+type CertificatesType = {
+  name: string;
+  issue: string;
+  id: string;
+  href: string;
+};
+type RecentWorksType = { name: string; href: string };
+
+type ResumeType = {
+  info: InfoType[];
+  contact: ContactType[];
+  location: LocationType[];
+  ProfessionalSummary: ProfessionalSummaryType[];
+  AcademicBackground: AcademicBackgroundType[];
+  CoreSkills: CoreSkillsType[];
+  Projects: ProjectsType[];
+  OtherProjects: OtherProjectsType[];
+  Certificates: CertificatesType[];
+  RecentWorks: RecentWorksType[];
+};
+
+type ResumeProps = {
+  userData: ResumeType;
+};
 
 export function Resume() {
-  async function Save() {
+
+   async function Save() {
     const element = document.getElementById("resume");
     if (!element) return;
 
@@ -27,7 +82,7 @@ export function Resume() {
     document.body.style.overflow = "visible";
     element.style.overflow = "visible";
     element.style.maxHeight = "none";
-    element.style.width = "1000px";
+    element.style.width = "1440px";
 
     // Hide save button
     const saveButton = document.getElementById("save-resume-btn");
@@ -39,7 +94,7 @@ export function Resume() {
     const canvas = await html2canvas(element, {
       allowTaint: true,
       useCORS: true,
-      scale: 1.5, // reduce scale to lower resolution & size (~1.5 is sweet spot)
+      scale: 2.8,
       backgroundColor: "#ffffff",
       windowWidth: 1000,
       scrollX: 0,
@@ -77,7 +132,8 @@ export function Resume() {
     element.style.maxHeight = originalMaxHeight;
     element.style.overflow = originalElementOverflow;
   }
-
+  
+  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -110,71 +166,44 @@ export function Resume() {
             priority
           />
           <div className="flex flex-col items-start space-y-1 w-3/4">
-            <h1 className="text-3xl font-bold uppercase">Sonu Rai</h1>
-            <p className="text-sm tracking-wider uppercase text-gray-600">
-              Software Engineer
-            </p>
-            <div className=" grid sm:grid-cols-2 text-sm text-gray-700 space-y-1 mt-3">
-              <p>
-                📞 &nbsp;
-                <Link
-                  href="tel:+91 9905757864"
-                  className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
-                >
-                  +91 9905757864
-                </Link>
-              </p>
-              <p className="flex">
-                {/* mail */}
-                <Image
-                  height={20}
-                  width={20}
-                  src="/svg/gmail.svg"
-                  alt="Gmail"
-                />
-                &nbsp;
-                <Link
-                  target="_blank"
-                  href="mailto:sonurai272004@gmail.com"
-                  className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
-                >
-                  sonurai272004@gmail.com
-                </Link>
-              </p>
-              <p className="flex">
-                <Image
-                  height={20}
-                  width={20}
-                  src="/svg/linkdin.svg"
-                  alt="LinkedIn"
-                />
-                &nbsp;
-                <Link
-                  target="_blank"
-                  href="https://www.linkedin.com/in/sonu-rai-r12/"
-                  className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
-                >
-                  Sonu Rai
-                </Link>
-              </p>
-              <p className="flex">
-                <Image
-                  height={20}
-                  width={20}
-                  src="/svg/github.svg"
-                  alt="Github"
-                />
-                &nbsp;
-                <Link
-                  target="_blank"
-                  href="https://github.com/SonuR12/"
-                  className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
-                >
-                  SonuR12
-                </Link>
-              </p>
-              <p>📍 Delhi, India</p>
+            {info.map((item, index) => (
+              <div key={index} className="space-y-1">
+                <h1 className="text-3xl font-bold uppercase">{item.name}</h1>
+                <p className="text-sm tracking-wider uppercase text-gray-600">
+                  {item.role}
+                </p>
+              </div>
+            ))}
+
+            <div className="grid sm:grid-cols-2 gap-1 mt-3 text-sm text-gray-700">
+              {contact.map((item, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <Image
+                    height={20}
+                    width={20}
+                    src={item.image}
+                    alt={item.name}
+                  />
+                  <Link
+                    target="_blank"
+                    href={item.href}
+                    className="hover:underline cursor-pointer text-indigo-500 hover:text-indigo-700"
+                  >
+                    {item.name}
+                  </Link>
+                </div>
+              ))}
             </div>
+
+            {location.map((item, index) => {
+              return (
+                <div key={index}>
+                  <p>
+                    {item.city}, {item.country}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -183,12 +212,16 @@ export function Resume() {
           <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
             Professional Summary
           </h3>
-          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
-            Passionate and detail-oriented Full Stack Developer with strong
-            expertise in JavaScript, TypeScript, Flutter, and scalable web
-            technologies like Next.js, MongoDB, and Prisma. Committed to
-            building clean, performant, and accessible apps.
-          </p>
+          {ProfessionalSummary.map((item, index) => {
+            return (
+              <p
+                key={index}
+                className="mt-2 ml-3 text-sm text-gray-700 leading-relaxed"
+              >
+                {item.description}
+              </p>
+            );
+          })}
         </section>
 
         {/* Section: Academic Background */}
@@ -196,25 +229,17 @@ export function Resume() {
           <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
             Academic Background
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 text-sm">
-            <div>
-              <p className="font-semibold">ADGIPS (GGSIPU)</p>
-              <p>B.Tech in CSE (2023 - Present)</p>
-              <p className="text-gray-600">GPA: 8.7/10</p>
-              <p className="mt-2 text-gray-700">
-                Learned computer science fundamentals and hands-on full stack
-                projects using MERN, Flutter, Java, and Node.js.
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold">School Of Excellence</p>
-              <p>Senior Secondary (PCMB 2022 Passout)</p>
-              <p className="text-gray-600">Grade B</p>
-              <p className="mt-2 text-gray-700">
-                Focused on Math, Physics, and Computer Science to strengthen
-                logic and problem-solving.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 ml-3 text-sm">
+            {AcademicBackground.map((item, index) => {
+              return (
+                <div key={index}>
+                  <div className="font-semibold">{item.name}</div>
+                  <div>{item.education}</div>
+                  <div className="text-gray-600">{item.grade}</div>
+                  <p className="mt-2 text-gray-700">{item.describe}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -223,36 +248,18 @@ export function Resume() {
           <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
             Core Skills
           </h3>
-          <ul className="list-disc ml-6 mt-2 text-sm text-gray-700 space-y-1">
-            <li>
-              <strong>Languages:</strong> Java, TypeScript, JavaScript, Dart
-            </li>
-            <li>
-              <strong>Backend & Scripting:</strong> Node.js, PHP, Mongoose,
-              Prisma (ORM)
-            </li>
-            <li>
-              <strong>Databases:</strong> MongoDB, MySQL
-            </li>
-            <li>
-              <strong>API & Communication:</strong> REST APIs
-            </li>
-            <li>
-              <strong>Frameworks:</strong> Next.js (Web), React.js, Flutter
-              (Mobile + Web)
-            </li>
-            <li>
-              <strong>Authentication:</strong> NextAuth, Clerk, Firebase Auth,
-              JWT (JSON Web Token)
-            </li>
-            <li>
-              <strong>UI Libraries:</strong> ShadCN UI, Tailwind CSS3, Bootstrap
-            </li>
-            <li>
-              <strong>Soft Skills:</strong> Teamwork & Collaboration, Debugging
-              & Problem Solving, Clean Code Practices
-            </li>
-          </ul>
+          {CoreSkills.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="list-disc ml-3 mt-2 text-sm text-gray-700 space-y-1"
+              >
+                <span>
+                  <strong>{item.type}:</strong> {item.learn}
+                </span>
+              </div>
+            );
+          })}
         </section>
 
         {/* Section: Career History */}
@@ -261,119 +268,62 @@ export function Resume() {
             Career History / Projects
           </h3>
           <div className="mt-2 space-y-4 text-sm">
-            <div className="mt-2 space-y-4 text-sm">
-              <div>
-                <p className="font-semibold">
-                  AI Mentor Assistant (March 2025)
-                </p>
-                <p className="text-gray-600">
-                  Next.js, MongoDB, Tailwind, Gemini API
-                </p>
-                <p className="mt-1 text-gray-700 leading-relaxed">
-                  Developed an AI-driven mentorship platform offering tailored
-                  career roadmaps based on users’ backgrounds and goals.
-                  Engineered secure sign-ins, personalized dashboards, and a
-                  smooth, responsive UI. Collaborated closely with&nbsp;
-                  <a
-                    href="https://www.linkedin.com/in/jatinkaushik-jk/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-500 hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>Jatin Kaushik</span>
-                    <Image
-                      height={20}
-                      width={20}
-                      src="/svg/linkdin.svg"
-                      alt="LinkedIn"
-                    />
-                  </a>
-                  ,&nbsp;
-                  <Link
-                    href="https://www.linkedin.com/in/ayush-aryan-3a8367358/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-500 hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>Ayush Aryan</span>
-                    <Image
-                      height={20}
-                      width={20}
-                      src="/svg/linkdin.svg"
-                      alt="LinkedIn"
-                    />
-                  </Link>
-                  , and&nbsp;
-                  <Link
-                    href="https://www.linkedin.com/in/sumit-kumar-17097831a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-500 hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>Sumit Kumar</span>
-                    <Image
-                      height={20}
-                      width={20}
-                      src="/svg/linkdin.svg"
-                      alt="LinkedIn"
-                    />
-                  </Link>
-                  — ensuring smooth teamwork, clean code, and user-focused
-                  results.
-                </p>
+            {Projects.map((item, index) => (
+              <div key={index} className="mt-2 ml-3 space-y-4 text-sm">
+                <div>
+                  <div className="font-semibold">{item.title}</div>
+                  <div className="text-gray-600">
+                    <span className="font-semibold">Tech - </span>
+                     {item.tech}</div>
+                  <p className="mt-1 text-gray-700 leading-relaxed">
+                    {item.description}
+                    {item.link && item.link.length > 0 && (
+                      <>
+                        &nbsp;
+                        {item.link.map((person, idx) => (
+                          <span key={idx}>
+                            <Link
+                              href={person.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-indigo-500 hover:underline inline-flex items-center gap-1"
+                            >
+                              <span>{person.name}</span>
+                              <Image
+                                height={20}
+                                width={20}
+                                src="/svg/linkdin.svg"
+                                alt="LinkedIn"
+                              />
+                            </Link>
+                            {idx < item.link.length - 2 ? ", " : ""}
+                            {idx === item.link.length - 2 ? ", and " : ""}
+                          </span>
+                        ))}
+                      </>
+                    )}
+                    {item.description2}
+                  </p>
+                </div>
               </div>
-            </div>
+            ))}
 
+            {/* Other Projects */}
             <div>
-              <p className="font-semibold">
-                Maharani E-commerce (January 2025)
-              </p>
-              <p className="text-gray-600">
-                Next.js, Admin Panel, MongoDB, Mongoose
-              </p>
-              <p className="mt-1 text-gray-700 leading-relaxed">
-                Created a full-featured e-commerce platform with a robust admin
-                dashboard for managing products, users, and orders. Implemented
-                secure authentication, product filtering, and dynamic search.
-                Integrated CRUD operations and order tracking, ensuring a
-                seamless shopping experience for users and efficient store
-                management for admins.
-              </p>
-            </div>
-
-            <div>
-              <p className="font-semibold">Other Projects</p>
-              <ul className="list-disc ml-5 text-gray-700 mt-1 space-y-1 text-sm">
-                <li>
-                  <strong>Sonu.Dev – Personal Portfolio:</strong> Sleek,
-                  responsive portfolio built with React, Nextjs, TailwindCSS3,
-                  Shadcn Ui to showcase skills and projects.
-                </li>
-                <li>
-                  <strong>Apple Website Clone:</strong> Pixel-perfect clone of
-                  Apple’s homepage with HTML5, CSS3, javaScript and Tailwind
-                  CSS3.
-                </li>
-                <li>
-                  <strong>Antivirus Product Site:</strong> Freelance modern
-                  responsive site built with HTML5, CSS3, and JS featuring
-                  interactive sections and downloads.
-                </li>
-                <li>
-                  <strong>Spotify Clone:</strong> Responsive web player layout
-                  replicating Spotify’s UI, built with HTML5, CSS3, JavaScript.
-                </li>
-                <li>
-                  <strong>Blinkit UI Clone:</strong> E-commerce UI built with
-                  Flutter and Dart, deployed via Firebase with custom
-                  components.
-                </li>
-                <li>
-                  <strong>Todo Web App:</strong> Functional task manager app
-                  built with Flutter and Dart, featuring CRUD actions and
-                  Firebase hosting.
-                </li>
-              </ul>
+              <span className="font-bold">Other Projects</span>
+              {OtherProjects.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="list-disc ml-3 text-gray-700 mt-1 space-y-1 text-sm"
+                  >
+                    <span>
+                      <strong>{item.name}: </strong>
+                      {item.description}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -383,45 +333,24 @@ export function Resume() {
           <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
             Certificates
           </h3>
-          <ul className="mt-2 space-y-3 text-sm text-gray-700">
-            <li>
-              <p className="font-semibold">Generative AI</p>
-              <p>Google · Issued Apr 2025</p>
-              <p>Credential ID: 14653895</p>
-              <Link
-                href="https://www.cloudskillsboost.google/public_profiles/4edab095-7ec9-4656-9d28-5680d69ff678/badges/14653895?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
-                target="_blank"
-                className="text-indigo-500 hover:underline"
-              >
-                Show credential
-              </Link>
-            </li>
-            <li>
-              <p className="font-semibold">
-                Set Up an App Dev Environment on Google Cloud (Skill Badge)
-              </p>
-              <p>Google · Issued Apr 2025</p>
-              <Link
-                href="https://www.credly.com/badges/a2e7efd7-ef52-4c7d-8a9a-b98d050979cf/linked_in_profile"
-                target="_blank"
-                className="text-indigo-500 hover:underline"
-              >
-                Show credential
-              </Link>
-            </li>
-            <li>
-              <p className="font-semibold">Skill Boost Arcade Base Camp</p>
-              <p>Google · Issued Apr 2025</p>
-              <p>Credential ID: 14547654</p>
-              <Link
-                href="https://www.cloudskillsboost.google/public_profiles/4edab095-7ec9-4656-9d28-5680d69ff678/badges/14547654?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
-                target="_blank"
-                className="text-indigo-500 hover:underline"
-              >
-                Show credential
-              </Link>
-            </li>
-          </ul>
+          {Certificates.map((item, index) => {
+            return (
+              <ul key={index} className="mt-2 ml-3 space-y-3 text-sm text-gray-700">
+                <li>
+                  <div className="font-semibold">{item.name}</div>
+                  <div>{item.issue}</div>
+                  <div>Credential ID: {item.id}</div>
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    className="text-indigo-500 hover:underline"
+                  >
+                    Show credential
+                  </Link>
+                </li>
+              </ul>
+            );
+          })}
         </section>
 
         {/* Section: Work References */}
@@ -429,32 +358,25 @@ export function Resume() {
           <h3 className="bg-gray-800 text-white text-sm px-3 py-1 rounded uppercase font-semibold w-fit">
             Recent Works
           </h3>
-          <div className="mt-2 text-sm text-gray-700 space-y-1">
-            <p>
-              Ecommerce Website (
-              <Link
-                href="https://maharani-blush.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-500 hover:text-indigo-700 hover:underline"
-              >
-                Maharani
-              </Link>
-              )
-            </p>
-            <p>
-              Mentor Mind (
-              <Link
-                href="https://mentor-mind-app.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-500 hover:text-indigo-700 hover:underline"
-              >
-                AI Mentor Mind
-              </Link>
-              )
-            </p>
-          </div>
+
+          {RecentWorks.map((item, index) => {
+            return (
+              <div key={index} className="mt-2 ml-3 text-sm text-gray-700 space-y-1">
+                <div>
+                  {item.name} (
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-500 hover:text-indigo-700 hover:underline"
+                  >
+                    Maharani
+                  </Link>
+                  )
+                </div>
+              </div>
+            );
+          })}
         </section>
 
         {/* Footer */}

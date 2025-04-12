@@ -182,9 +182,11 @@
 }
 
 
-.html2canvas-friendly * {
-  color: black !important;
-  background-color: white !important;
+.screenshot-mode * {
+  box-shadow: none !important;
+  transition: none !important;
+  background-image: none !important;
 }
+
 
 
