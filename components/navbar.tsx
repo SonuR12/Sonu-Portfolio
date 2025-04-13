@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "#project" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -45,13 +45,21 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = useCallback((href: string) => {
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(href);
-    }
-    setIsOpen(false);
+    const scroll = () => {
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+        setActiveSection(href);
+      }
+      setIsOpen(false);
+    };
+  
+    // For sections like Projects, which load late, wait until next frame
+    requestAnimationFrame(() => {
+      setTimeout(scroll, 100); // Adjust delay if needed
+    });
   }, []);
+  
 
   return (
     <motion.div

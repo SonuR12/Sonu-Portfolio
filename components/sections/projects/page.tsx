@@ -73,7 +73,7 @@ export const Projects = () => {
         <SectionHeader className="px-16 py-2" plainText="" highlightText="👷‍♂️ Best Works" />
 
         {/* Section fade-in */}
-        <div id="projects">
+        <div id="project">
           {showProjects && (
             <motion.div 
             initial={
