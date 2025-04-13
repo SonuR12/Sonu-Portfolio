@@ -59,7 +59,7 @@ const Skills = () => {
   });
 
   return (
-    <div className="p-0 sm:py-5 md:py-10 lg:py-16 xl:py-24" id="skills">
+    <div className="" id="skills">
     <SectionContainer id="">
       <div
         className="section-contents my-5 mx-[22px] md:mx-[116px] relative"
@@ -67,7 +67,7 @@ const Skills = () => {
       >
         <SectionHeader plainText="" highlightText="👨‍💻 Tech Stacks" />
 
-        <div className="card w-full px-[33px] sm:py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px] overflow-hidden">
+        <div className="card w-full px-[33px] py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px] overflow-hidden">
           {animatedSkills.map((skill, idx) => (
             <motion.div
               key={idx}

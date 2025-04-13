@@ -51,7 +51,7 @@ export const Project = ({
             src={thumbnail}
             alt={title}
             fill
-            className="object-cover"
+            className="object-contain"
             priority
           />
 
@@ -60,7 +60,7 @@ export const Project = ({
             {isPlaying ? (
               hasVideo ? (
                 <video
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fill"
                   autoPlay
                   muted
                   loop={false}
@@ -94,7 +94,7 @@ export const Project = ({
           <div className="absolute top-0 left-0 w-full h-full hidden md:block">
             {hasVideo ? (
               <video
-                className="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="w-full h-full object-fill opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 autoPlay
                 muted
                 loop={false}
@@ -184,6 +184,7 @@ export const Project = ({
                 width={24}
                 height={24}
                 className="object-contain"
+                priority
               />
             </div>
           ))}
