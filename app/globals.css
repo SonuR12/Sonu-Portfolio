@@ -135,9 +135,22 @@
 }
 
 
-::-webkit-scrollbar{
+/* Hide the scrollbar */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Webkit browsers */
+::-webkit-scrollbar {
   display: none;
 }
+
+/* Optional: Customize the scrollable area */
+.scrollable-content {
+  overflow: scroll; /* Allows scrolling without showing the scrollbar */
+}
+
 
 @media screen and (max-width: 480px) {
   .working {

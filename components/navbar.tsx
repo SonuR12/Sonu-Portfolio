@@ -55,10 +55,10 @@ const Navbar = () => {
 
   return (
     <motion.div
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.5 }}>
-      
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <nav ref={navRef} className="w-fit backdrop-blur-lg mr-2 sm:mr-0 bg-gray-300/30 dark:bg-black/50 rounded-xl py-1 px-1 sm:px-2 sm:py-2 shadow-xl">
         {/* Desktop Navigation */}
         <div className="hidden sm:flex justify-center items-center gap-6 bg-transparent text-white rounded-md sm:rounded-xl">
@@ -94,12 +94,11 @@ const Navbar = () => {
 
           {/* Slide-in Mobile Menu */}
           <main
-            className={`absolute top-0 right-0 w-36 shadow-xl backdrop-blur-xl rounded-md py-4 px-3 z-50 transition-all duration-300 ease-in-out 
-              transform ${
-                isOpen
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-full opacity-0 pointer-events-none"
-              } bg-white dark:bg-black/90`}
+            className={`absolute top-0 right-0 w-36 shadow-xl backdrop-blur-xl rounded-md py-4 px-3 z-50 transition-all duration-300 ease-in-out transform ${
+              isOpen
+                ? "translate-y-0 opacity-100"
+                : "translate-y-full opacity-0 pointer-events-none"
+            } bg-white dark:bg-black/90`}
             aria-hidden={!isOpen}
           >
             <div className="flex justify-between items-start">

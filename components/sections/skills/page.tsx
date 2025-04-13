@@ -59,13 +59,12 @@ const Skills = () => {
   });
 
   return (
-    <div className="" id="skills">
-    <SectionContainer id="">
+    <SectionContainer id="skills">
       <div
-        className="section-contents my-5 mx-[22px] md:mx-[116px] relative"
+        className="section-contents mx-[22px] md:mx-[116px] relative"
         ref={sectionRef}
       >
-        <SectionHeader plainText="" highlightText="👨‍💻 Tech Stacks" />
+        <SectionHeader plainText="👨‍💻 This is my" highlightText="Tech Stacks" />
 
         <div className="card w-full px-[33px] py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px] overflow-hidden">
           {animatedSkills.map((skill, idx) => (
@@ -97,7 +96,6 @@ const Skills = () => {
         />
       </>
     </SectionContainer>
-    </div>
   );
 };
 
