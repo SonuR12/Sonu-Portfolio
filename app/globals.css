@@ -146,12 +146,6 @@
   display: none;
 }
 
-/* Optional: Customize the scrollable area */
-.scrollable-content {
-  overflow: scroll; /* Allows scrolling without showing the scrollbar */
-}
-
-
 @media screen and (max-width: 480px) {
   .working {
     flex-direction: column;
