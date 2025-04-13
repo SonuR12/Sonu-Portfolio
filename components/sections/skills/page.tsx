@@ -64,7 +64,7 @@ const Skills = () => {
         className="section-contents mx-[22px] md:mx-[116px] relative"
         ref={sectionRef}
       >
-        <SectionHeader plainText="👨‍💻 This is my" highlightText="Tech Stacks" />
+        <SectionHeader plainText="" highlightText="👨‍💻 Tech Stacks" />
 
         <div className="card w-full px-[33px] py-[27px] flex flex-wrap justify-center items-center z-10 gap-[19px] md:gap-[33px] overflow-hidden">
           {animatedSkills.map((skill, idx) => (

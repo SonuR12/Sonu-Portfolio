@@ -12,7 +12,7 @@ export const Contact = () => {
       <SectionHeader
         className="px-1 py-2 !text-center mx-10 md:mx-16"
         plainText=""
-        highlightText="📬Contact Information"
+        highlightText="📬 Contact Information"
       />
 
       <motion.div
