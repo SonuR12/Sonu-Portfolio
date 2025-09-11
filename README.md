@@ -6,7 +6,7 @@ This portfolio is designed to be fast, responsive, and elegant, giving visitors 
 ---
 
 🌍 Live Demo
-Live Portfolio Website ![link](https://sonu-portfolio-mu.vercel.app)
+
 
 
 ---
