@@ -10,6 +10,24 @@ This portfolio is designed to be fast, responsive, and elegant, giving visitors 
 
 ---
 
+## ✨ Features  
+
+- 🚀 **Built with Next.js** – for optimized performance and routing.  
+- 🎨 **TailwindCSS** – responsive, utility-first styling.  
+- 🖼️ **shadcn/ui** – elegant pre-styled components.  
+- 📂 **Dynamic Projects Section** – fetches repositories from GitHub.  
+- 🌑 **Dark Mode Support** – seamless light/dark theme switching.  
+- 📱 **Fully Responsive** – works across all devices.  
+
+---
+
+### 📸 Screenshot  
+
+![Portfolio Screenshot](https://github.com/SonuR12/Sonu-Portfolio/blob/main/public/Sonu-portfolio.png)
+
+---
+
+
 ## 📂 Folder Structure  
 
 ```bash
@@ -32,23 +50,6 @@ Sonu-Portfolio/
 └── README.md             # Project documentation
 ```
 ---
-
----
-
-### 📸 Screenshot  
-
-![Portfolio Screenshot](https://github.com/SonuR12/Sonu-Portfolio/blob/main/public/Sonu-portfolio.png)
-
----
-
-## ✨ Features  
-
-- 🚀 **Built with Next.js** – for optimized performance and routing.  
-- 🎨 **TailwindCSS** – responsive, utility-first styling.  
-- 🖼️ **shadcn/ui** – elegant pre-styled components.  
-- 📂 **Dynamic Projects Section** – fetches repositories from GitHub.  
-- 🌑 **Dark Mode Support** – seamless light/dark theme switching.  
-- 📱 **Fully Responsive** – works across all devices.  
 
 ---
 
