@@ -21,7 +21,7 @@ This portfolio is designed to be fast, responsive, and elegant, giving visitors 
 
 ---
 
-### 📸 Screenshot  
+## 📸 Screenshot  
 
 ![Portfolio Screenshot](https://github.com/SonuR12/Sonu-Portfolio/blob/main/public/Sonu-portfolio.png)
 
