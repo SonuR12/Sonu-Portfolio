@@ -23,21 +23,21 @@ export const Contact = () => {
         viewport={{ once: false, amount: 0.2 }}
       >
         <SectionContainer id="" className="relative bg-transparent">
-          <div className="relative section-contents overflow-hidden min-h-[700px] rounded-xl">
+          <div className="relative section-contents overflow-hidden min-h-[700px] w-[90vw] rounded-xl">
             {/* Animated Background Map */}
             <motion.div
-              className="absolute inset-0 bg-gray-300 z-10"
+              className="absolute inset-0 z-10 w-full h-full"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.0542603934364!2d77.31781887506077!3d28.50801517573292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6efe67e6393%3A0x988d6c9b56e0b3ca!2sg%2C%20120C%2C%20Saurabh%20Vihar%2C%20Molar%20Band%2C%20New%20Delhi%2C%20Delhi%20110044!5e0!3m2!1sen!2sin!4v1743954867036!5m2!1sen!2sin"
-                className="w-full h-full opacity-100"
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7012.151852116738!2d77.32088510409552!3d28.50736329025616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1790392082174!5m2!1sen!2sin"
                 frameBorder="0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
                 style={{ border: 0 }}
               />
             </motion.div>

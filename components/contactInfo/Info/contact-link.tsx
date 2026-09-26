@@ -1,5 +1,5 @@
 "use client"
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
@@ -27,12 +27,6 @@ const Contactlink = () => {
   };
 
   const contactItems = [
-    {
-      key: "phone",
-      icon: <Phone size={24} />,
-      text: "+91 9905757864",
-      url: "tel:+91 9905757864"
-    },
     {
       key: "mail",
       icon: <Mail size={24} />,

@@ -8,8 +8,7 @@ import { motion } from "framer-motion";
 const locations = [
   {
     title: "Address",
-    address: "G-120, Saurabh Vihar, Jaitpur, Badarpur, New Delhi, South Delhi, New Delhi - 110044",
-    phone: "+91 9905757864",
+    address: "New Delhi, India",
     map: "/images/map.png",
   },
 ];
@@ -53,7 +52,7 @@ const Location = () => {
                 {loc.title}
               </h3>
               <p className="text-gray-600 lg:line-clamp-2">{loc.address}</p>
-              <p className="text-gray-800 mt-2">{loc.phone}</p>
+              {/* <p className="text-gray-800 mt-2">{loc.phone}</p> */}
               <div className="border-t border-violet-200 my-4" />
               <Link
                 target="_blank"

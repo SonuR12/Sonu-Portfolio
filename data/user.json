@@ -3,11 +3,6 @@
 
   "contact": [
     {
-      "image": "/images/phone.png",
-      "name": "+91 9905757864",
-      "href": "tel:+91 9905757864"
-    },
-    {
       "image": "/svg/gmail.svg",
       "name": "sonurai272004@gmail.com",
       "href": "mailto:sonurai272004@gmail.com"
